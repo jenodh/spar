@@ -36,6 +36,18 @@ p {
   margin-top: 0;
 }
 
+/* GENERAL */
+
+section {
+  padding: 32px 16px;
+}
+
+section h2 {
+  font-size: calc(24rem / 16);
+  font-weight: 400;
+  margin-bottom: 34px;
+}
+
 /* HEADER */
 
 .top-banner {
@@ -139,6 +151,63 @@ p {
   padding: 10px 16px;
   border-radius: 4px;
   font-size: calc(20rem / 16);
+}
+
+/* PRODUCT SECTION */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.product-card {
+  min-width: 0;
+}
+
+.product-link {
+  display: block;
+}
+
+.product-image {
+  width: 100%;
+  width: 171px;
+  height: 284px;
+  margin-bottom: 8px;
+  background-color: #a1a0a0;
+}
+
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.product-card h3 {
+  font-size: calc(16rem / 16);
+  font-weight: 600;
+  margin: 0;
+}
+
+.product-price {
+  font-size: calc(16rem / 16);
+  white-space: nowrap;
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.carousel-controls button {
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 50%;
+  background-color: #ddd;
 }
 
 /* MEDIA QUERIES */
