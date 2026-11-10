@@ -97,9 +97,57 @@ p {
   font-size: calc(12rem / 16);
 }
 
-/* Main header - Desktop */
+/* HERO */
+
+.hero {
+  position: relative;
+  padding: 0;
+  height: 600px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.hero-image {
+  position: absolute;
+  inset: 0;
+  background-color: #a1a0a0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 16px 16px 36px 16px;
+}
+
+.hero-content h1 {
+  font-size: calc(40rem / 16);
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+
+.hero-content p {
+  font-size: calc(24rem / 16);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: calc(-0.264rem / 16);
+  margin-bottom: 24px;
+}
+
+.button {
+  display: inline-block;
+  background-color: #d3d3d3;
+  padding: 10px 16px;
+  border-radius: 4px;
+  font-size: calc(20rem / 16);
+}
+
+/* MEDIA QUERIES */
+
+/* DESKTOP */
 
 @media (min-width: 1024px) {
+  /* MAIN HEADER - DESKTOP */
+
   .main-header {
     display: flex;
     align-items: center;
@@ -140,5 +188,32 @@ p {
     border: none;
     background: none;
     font-size: calc(14rem / 16);
+  }
+
+  /* HERO - DESKTOP */
+
+  .hero {
+    height: 630px;
+  }
+
+  .hero-content {
+    padding: 34px;
+    max-width: 700px;
+  }
+
+  .hero-content h1 {
+    font-size: calc(96rem / 16);
+    margin-bottom: 12px;
+  }
+
+  .hero-content p {
+    font-size: calc(32rem / 16);
+    line-height: 1.5;
+    margin-bottom: 40px;
+  }
+
+  .button {
+    font-size: calc(20rem 7 16);
+    padding: 8px 12px;
   }
 }
