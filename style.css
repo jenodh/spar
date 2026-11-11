@@ -340,6 +340,23 @@ section h2 {
   background-color: #a1a0a0;
 }
 
+/* GALLERY SECTION */
+.gallery-section h2 {
+  text-align: center;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.gallery-image {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background-color: #c8c6c6;
+}
+
 /* MEDIA QUERIES */
 
 /* DESKTOP */
