@@ -710,6 +710,7 @@ section h2 {
 
   .content-section {
     padding: 0;
+    margin-bottom: 120px;
   }
 
   .content-image {
@@ -727,19 +728,19 @@ section h2 {
   /* SPLIT SECTION */
 
   .split-section {
-    height: 600px;
-    flex-direction: row;
+    height: 860px;
+    flex-direction: row-reverse;
     align-items: stretch;
   }
 
   .split-image {
-    width: 40%;
+    width: 60%;
     height: 100%;
     aspect-ratio: auto;
   }
 
   .split-content {
-    width: 60%;
+    width: 40%;
     padding: 80px 8%;
     display: flex;
     flex-direction: column;
