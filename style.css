@@ -566,12 +566,12 @@ section h2 {
   }
 
   .hero-content h1 {
-    font-size: 72px;
+    font-size: calc(96rem / 16);
     margin-bottom: 8px;
   }
 
   .hero-content p {
-    font-size: 24px;
+    font-size: calc(32rem / 16);
     margin-bottom: 32px;
   }
 
