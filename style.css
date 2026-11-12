@@ -592,8 +592,8 @@ section h2 {
 
   .product-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
-    max-width: 1120px;
+    gap: 60px;
+    max-width: 1140px;
     margin: 0 auto;
   }
 
@@ -606,7 +606,7 @@ section h2 {
 
   .product-card h3,
   .product-price {
-    font-size: 14px;
+    font-size: calc(20rem / 16);
     font-weight: 400;
   }
 
