@@ -3,6 +3,12 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -159,6 +165,8 @@ section h2 {
   display: flex;
   gap: 12px;
   overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   scrollbar-width: none;
