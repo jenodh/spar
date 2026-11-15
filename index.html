@@ -182,7 +182,7 @@
       <!-- Category section -->
       <section class="category-section">
         <h2>Säsongens favoriter</h2>
-        <div class="category-carousel">
+        <div class="category-carousel" id="category-carousel">
           <article class="category-card">
             <a href="#">
               <div class="category-image">
@@ -209,10 +209,18 @@
         </div>
 
         <div class="carousel-controls">
-          <button type="button">
+          <button
+            type="button"
+            aria-label="Föregående kategorier"
+            data-direction="-1"
+          >
             <img src="assets/icons/chevron_backward.svg" alt="" />
           </button>
-          <button type="button">
+          <button
+            type="button"
+            aria-label="Nästa kategorier"
+            data-direction="1"
+          >
             <img src="assets/icons/keyboard_arrow_right.svg" alt="" />
           </button>
         </div>
