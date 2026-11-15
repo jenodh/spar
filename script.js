@@ -1,4 +1,4 @@
-/* Product carousel */
+// Product carousel
 
 const productCarousel = document.querySelector("#product-carousel");
 
@@ -22,7 +22,7 @@ productButtons.forEach((button) => {
   });
 });
 
-/* Category carousel */
+// Category carousel
 
 const categoryCarousel = document.querySelector("#category-carousel");
 
@@ -46,6 +46,35 @@ categoryButtons.forEach((button) => {
       categoryCarousel.scrollLeft + direction * (cardWidth + gap);
 
     categoryCarousel.scrollTo({
+      left: Math.max(0, Math.min(nextPosition, maxScroll)),
+      behavior: "smooth",
+    });
+  });
+});
+
+// Gallery Carousel
+
+const galleryCarousel = document.querySelector("#gallery-carousel");
+
+const galleryButtons = document.querySelectorAll(
+  ".gallery-section .carousel-controls button",
+);
+
+galleryButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const direction = Number(button.dataset.direction);
+
+    const galleryCard = galleryCarousel.querySelector(".gallery-card");
+    const cardWidth = galleryCard.offsetWidth;
+
+    const gap = parseFloat(getComputedStyle(galleryCarousel).gap);
+
+    const maxScroll = galleryCarousel.scrollWidth - galleryCarousel.clientWidth;
+
+    const nextPosition =
+      galleryCarousel.scrollLeft + direction * (cardWidth + gap);
+
+    galleryCarousel.scrollTo({
       left: Math.max(0, Math.min(nextPosition, maxScroll)),
       behavior: "smooth",
     });
