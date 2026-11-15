@@ -80,7 +80,27 @@
           <h2>Nyinkommet</h2>
         </div>
 
-        <div class="product-grid">
+        <div class="product-grid" id="product-carousel">
+          <article class="product-card">
+            <a href="#" class="product-link">
+              <div class="product-image"></div>
+              <div class="product-info">
+                <h3>Product title</h3>
+                <p class="product-price">1499 kr</p>
+              </div>
+            </a>
+          </article>
+
+          <article class="product-card">
+            <a href="#" class="product-link">
+              <div class="product-image"></div>
+              <div class="product-info">
+                <h3>Product title</h3>
+                <p class="product-price">1499 kr</p>
+              </div>
+            </a>
+          </article>
+
           <article class="product-card">
             <a href="#" class="product-link">
               <div class="product-image"></div>
@@ -113,11 +133,15 @@
         </div>
 
         <div class="carousel-controls">
-          <button type="button">
+          <button
+            type="button"
+            aria-label="Föregående produkter"
+            data-direction="-1"
+          >
             <img src="assets/icons/chevron_backward.svg" alt="" />
           </button>
 
-          <button type="button">
+          <button type="button" aria-label="Nästa produkter" data-direction="1">
             <img src="assets/icons/keyboard_arrow_right.svg" alt="" />
           </button>
         </div>
