@@ -1,3 +1,58 @@
+:root {
+  /* COLORS */
+
+  /* Accent */
+  --neongreen-mid: #37f36f;
+  --neongreen-50: #e7feee;
+  --neongreen-100: #cffcdc;
+  --neongreen-200: #9ff9ba;
+  --neongreen-500: #0ef152;
+
+  /* Brand */
+  --teal-900: #142226;
+
+  /* Neutral */
+  --neutral-1: #fff;
+  --neutral-50: #f2f2f2;
+  --neutral-700: #4d4d4d;
+  --neutral-900: #151515;
+
+  /* TYPOGRAPHY */
+  --font-primary: Arial, sans-serif;
+
+  --font-size-xs: 11px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 20px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 32px;
+  --font-size-3xl: 40px;
+  --font-size-4xl: 64px;
+
+  --line-height-base: 1.5;
+
+  /* SPACING */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-base: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 40px;
+  --spacing-3xl: 64px;
+
+  /* LAYOUT */
+  --page-padding-mobile: 16px;
+  --page-padding-desktop: 40px;
+
+  --content-max-width: 1140px;
+
+  /* BORDER RADIUS */
+  --radius-sm: 4px;
+  --radius-md: 20px;
+  --radius-round: 50%;
+}
+
 /* Reset & base */
 * {
   box-sizing: border-box;
