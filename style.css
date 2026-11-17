@@ -175,10 +175,8 @@ section h2 {
 /* Logo */
 
 .logo {
-  font-size: calc(24rem / 16);
-  font-weight: 500;
-  line-height: 1.5;
-  letter-spacing: calc(-0.264rem / 16);
+  width: 65px;
+  padding: 6px 0 8px 0;
 }
 
 /* Main header - Mobile */
