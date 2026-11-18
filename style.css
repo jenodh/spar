@@ -536,12 +536,30 @@ section h2 {
 
 /* CONTENT SECTION CARDS */
 
+.content-carousel {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.content-carousel::-webkit-scrollbar {
+  display: none;
+}
+
 .content-card {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
   width: 250px;
+  flex: 0 0 250px;
+  scroll-snap-align: start;
 }
 
 .content-card-image {

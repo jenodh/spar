@@ -52,6 +52,42 @@ categoryButtons.forEach((button) => {
   });
 });
 
+// CONTENT CAROUSEL
+
+const contentCarousel = document.querySelector("#content-carousel");
+const contentButtons = document.querySelectorAll(
+  ".content-cards .carousel-controls button",
+);
+
+if (contentCarousel) {
+  contentButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const direction = Number(button.dataset.direction);
+
+      const card = contentCarousel.querySelector(".content-card");
+      const cardWidth = card.offsetWidth;
+
+      const carouselStyle = getComputedStyle(contentCarousel);
+      const gap = parseFloat(carouselStyle.gap);
+
+      const scrollAmount = cardWidth + gap;
+
+      const maxScroll =
+        contentCarousel.scrollWidth - contentCarousel.clientWidth;
+
+      const nextPosition =
+        contentCarousel.scrollLeft + scrollAmount * direction;
+
+      const clampedPosition = Math.max(0, Math.min(nextPosition, maxScroll));
+
+      contentCarousel.scrollTo({
+        left: clampedPosition,
+        behavior: "smooth",
+      });
+    });
+  });
+}
+
 // Gallery Carousel
 
 const galleryCarousel = document.querySelector("#gallery-carousel");
