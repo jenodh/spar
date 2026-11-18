@@ -565,7 +565,14 @@ section h2 {
 .content-card-image {
   width: 100%;
   height: 187px;
-  background-color: #142226;
+  overflow: hidden;
+}
+
+.content-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .content-card-info {
