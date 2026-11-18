@@ -472,6 +472,7 @@ section h2 {
   border: none;
   border-radius: 0 8px 8px 0;
   background-color: var(--neongreen-500);
+  color: var(--neutral-1000);
   font-size: var(--font-size-base);
   font-weight: 500;
   line-height: var(--line-height-sm);
