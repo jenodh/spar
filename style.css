@@ -520,6 +520,7 @@ section h2 {
   font-size: var(--font-size-xl);
   font-weight: 500;
   line-height: 1;
+  color: var(--neutral-1);
 }
 
 /* IMAGE SECTION */
