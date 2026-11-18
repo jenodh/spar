@@ -555,15 +555,21 @@ section h2 {
 
 .split-image {
   width: 100%;
-  aspect-ratio: 1 / 1;
-  background-color: #a1a0a0;
+  height: 390px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.split-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* GALLERY SECTION */
 
 .gallery-section {
   position: relative;
-  padding: 32px 0;
 }
 
 .gallery-carousel-wrapper {
@@ -572,7 +578,7 @@ section h2 {
 
 .gallery-carousel {
   display: flex;
-  gap: 12px;
+  gap: 16px;
   overflow-x: auto;
   overflow-y: hidden;
   width: 100%;
@@ -594,11 +600,31 @@ section h2 {
   background-color: #c8c6c6;
 }
 
+.gallery-card-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  height: 44px;
+  margin-top: 4px;
+}
+
+.gallery-card-title p {
+  margin: 0;
+  line-height: var(--line-height-base);
+}
+
+.gallery-card-title img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
 .gallery-section .carousel-controls {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: 20px;
+  margin-top: 16px;
 }
 
 /* NEWSLETTER */
