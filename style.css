@@ -53,6 +53,7 @@
   --font-size-5xl: calc(64rem / 16);
 
   /* Line height */
+  --line-height-1: 1;
   --line-height-xs: 1.09;
   --line-height-sm: 1.25;
   --line-height-base: 1.5;
@@ -138,6 +139,7 @@ section {
 
 section {
   padding: var(--page-padding-mobile);
+  margin: 32px 0;
 }
 
 section h2 {
@@ -308,6 +310,9 @@ section h2 {
 
 /* PRODUCT SECTION */
 
+.product-section {
+  margin-top:;
+}
 .product-grid {
   display: flex;
   gap: 12px;
@@ -475,11 +480,9 @@ section h2 {
 
 /* CATEGORY SECTION */
 
-/* CATEGORY SECTION */
-
 .category-carousel {
   display: flex;
-  gap: 12px;
+  gap: 16px;
   overflow-x: auto;
   overflow-y: hidden;
   max-width: 100%;
@@ -494,24 +497,27 @@ section h2 {
 }
 
 .category-card {
-  flex: 0 0 100%;
+  flex: 0 0 254px;
   min-width: 0;
   scroll-snap-align: start;
 }
 
 .category-image {
   width: 100%;
-  height: 350px;
+  aspect-ratio: 94 / 131;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #a1a0a0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .category-image h3 {
-  font-size: calc(40rem / 16);
-  font-weight: 400;
-  text-transform: uppercase;
+  font-size: var(--font-size-xl);
+  font-weight: 500;
+  line-height: 1;
 }
 
 /* IMAGE SECTION */
