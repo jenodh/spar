@@ -8,6 +8,7 @@
 }
 
 /* VARIABLES */
+
 :root {
   /* COLORS */
 
@@ -28,8 +29,12 @@
   --neutral-900: #151515;
 
   /* TYPOGRAPHY */
-  --font-primary: Arial, sans-serif;
 
+  /* Fonts */
+  --font-primary: "DM Sans", sans-serif;
+  --font-secondary: "Array", sans-serif;
+
+  /* Font size */
   --font-size-xs: calc(11rem / 16);
   --font-size-sm: calc(14rem / 16);
   --font-size-base: calc(16rem / 16);
@@ -40,7 +45,13 @@
   --font-size-4xl: calc(45rem / 16);
   --font-size-5xl: calc(64rem / 16);
 
+  /* Line height */
+  --line-height-sm: 1.25;
   --line-height-base: 1.5;
+
+  /* Letter spacing */
+  --letter-spacing-5: 0.05em;
+  --letter-spacing-10: 0.1em;
 
   /* SPACING */
   --spacing-xs: 4px;
@@ -111,12 +122,13 @@ p {
 /* GENERAL */
 
 section {
-  padding: 28px 16px;
+  padding: 32px 16px;
 }
 
 section h2 {
   font-size: var(--font-size-xl);
-  font-weight: 400;
+  font-weight: 500;
+  line-height: var(--font-size-xl);
   margin-bottom: var(--spacing-base);
 }
 
@@ -275,7 +287,7 @@ section h2 {
   border: 1px solid var(--neutral-1);
   border-radius: 8px;
   font-size: var(--font-size-base);
-  line-height: 1.25;
+  line-height: var(--line-height-sm);
   color: var(--neutral-1);
 }
 
@@ -311,7 +323,8 @@ section h2 {
   width: 100%;
   height: auto;
   aspect-ratio: 3 / 4;
-  margin-bottom: 8px;
+  padding: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
   background-color: #a1a0a0;
 }
 
@@ -319,25 +332,27 @@ section h2 {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  gap: 8px;
+  gap: var(--spacing-sm);
 }
 
 .product-card h3 {
-  font-size: calc(16rem / 16);
+  font-size: var(--font-size-base);
   font-weight: 600;
+  line-height: var(--line-height-sm);
   margin: 0;
 }
 
 .product-price {
-  font-size: calc(16rem / 16);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-sm);
   white-space: nowrap;
 }
 
 .carousel-controls {
   display: flex;
   justify-content: center;
-  gap: 16px;
-  margin-top: 16px;
+  gap: var(--spacing-base);
+  margin-top: var(--spacing-lg);
 }
 
 .carousel-controls button {
@@ -347,9 +362,9 @@ section h2 {
   align-items: center;
   justify-content: center;
   border: 1px solid #000;
-  border-radius: 50%;
+  border-radius: var(--radius-round);
   background-color: transparent;
-  padding: 8px;
+  padding: var(--spacing-sm);
 }
 
 .carousel-controls button img {
