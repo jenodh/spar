@@ -534,6 +534,67 @@ section h2 {
   object-fit: cover;
 }
 
+/* CONTENT SECTION CARDS */
+
+.content-carousel {
+  display: flex;
+  gap: 40px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.content-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.content-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 250px;
+  flex: 0 0 250px;
+  scroll-snap-align: start;
+}
+
+.content-card-image {
+  width: 100%;
+  height: 187px;
+  overflow: hidden;
+}
+
+.content-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.content-card-info {
+  width: 100%;
+}
+
+.content-card-info h3 {
+  font-size: var(--font-size-xl);
+  font-weight: 500;
+  line-height: var(--line-height-1);
+  padding-top: 8px;
+  margin-bottom: 12px;
+}
+
+.content-card-info p {
+  line-height: var(--line-height-base);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 8;
+  overflow: hidden;
+}
+
 /* SPLIT SECTION */
 
 .split-section {
@@ -1005,7 +1066,7 @@ section h2 {
 
   .content-section {
     padding: 0;
-    margin-bottom: 120px;
+    margin-bottom: 0;
   }
 
   .content-image {
@@ -1018,6 +1079,47 @@ section h2 {
     font-size: 24px;
     text-align: center;
     line-height: 1.5;
+  }
+
+  /* CONTENT SECTION CARDS */
+
+  .content-cards {
+    margin-block: 120px;
+  }
+
+  .content-carousel {
+    display: flex;
+    justify-content: space-between;
+    gap: 0;
+    max-width: 1115px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 0;
+    overflow: visible;
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+  }
+
+  .content-card {
+    flex: 0 0 318px;
+    width: 318px;
+    scroll-snap-align: none;
+  }
+
+  .content-card-image {
+    height: 238px;
+  }
+
+  .content-card-info h3 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .content-card-info p {
+    font-size: var(--font-size-base);
+  }
+
+  .content-cards .carousel-controls {
+    display: none;
   }
 
   /* SPLIT SECTION */
