@@ -1066,7 +1066,7 @@ section h2 {
 
   .content-section {
     padding: 0;
-    margin-bottom: 120px;
+    margin-bottom: 0;
   }
 
   .content-image {
@@ -1079,6 +1079,47 @@ section h2 {
     font-size: 24px;
     text-align: center;
     line-height: 1.5;
+  }
+
+  /* CONTENT SECTION CARDS */
+
+  .content-cards {
+    margin-block: 120px;
+  }
+
+  .content-carousel {
+    display: flex;
+    justify-content: space-between;
+    gap: 0;
+    max-width: 1115px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 0;
+    overflow: visible;
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+  }
+
+  .content-card {
+    flex: 0 0 318px;
+    width: 318px;
+    scroll-snap-align: none;
+  }
+
+  .content-card-image {
+    height: 238px;
+  }
+
+  .content-card-info h3 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .content-card-info p {
+    font-size: var(--font-size-base);
+  }
+
+  .content-cards .carousel-controls {
+    display: none;
   }
 
   /* SPLIT SECTION */
