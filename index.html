@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="sv">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,10 +13,9 @@
     />
     <script src="script.js" defer></script>
   </head>
+
   <body>
     <!-- HEADER -->
-
-    <!-- Top banner -->
     <header class="site-header">
       <div class="top-banner">
         <nav>
@@ -28,14 +27,11 @@
         </nav>
       </div>
 
-      <!-- Navigation -->
       <div class="main-header">
-        <!-- Logo -->
-        <a href="index.html" class="logo"
-          ><img src="assets/logos/Logo_navigation.png" alt="Spår"
-        /></a>
+        <a href="index.html" class="logo">
+          <img src="assets/logos/Logo_navigation.png" alt="Spår" />
+        </a>
 
-        <!-- Desktop navigation -->
         <nav class="desktop-nav">
           <a href="#">Ytterkläder</a>
           <a href="#">Överdelar</a>
@@ -44,7 +40,6 @@
           <a href="#">Accessories</a>
         </nav>
 
-        <!-- Desktop search and actions -->
         <div class="desktop-tools">
           <form action="" class="desktop-search" role="search">
             <img src="assets/icons/search.svg" alt="" />
@@ -58,7 +53,6 @@
           </button>
         </div>
 
-        <!-- Mobile actions -->
         <div class="mobile-actions">
           <div class="action-container">
             <button type="button">
@@ -81,7 +75,7 @@
 
     <!-- MAIN CONTENT -->
     <main>
-      <!-- Hero section -->
+      <!-- HERO -->
       <section class="hero">
         <div class="hero-image">
           <img
@@ -89,6 +83,7 @@
             alt=""
           />
         </div>
+
         <div class="hero-content">
           <h1>Vinterkollektion</h1>
           <p>Begränsad upplaga</p>
@@ -96,84 +91,89 @@
         </div>
       </section>
 
-      <!-- Product section -->
+      <!-- PRODUCT SECTION -->
       <section class="product-section">
-        <div class="section-header">
-          <h2>Upptäck kollektionen</h2>
-        </div>
+        <div class="section-inner">
+          <div class="section-header">
+            <h2>Upptäck kollektionen</h2>
+          </div>
 
-        <div class="product-grid" id="product-carousel">
-          <article class="product-card">
-            <a href="#" class="product-link">
-              <div class="product-image"></div>
-              <div class="product-info">
-                <h3>Product title</h3>
-                <p class="product-price">1499 kr</p>
-              </div>
-            </a>
-          </article>
+          <div class="product-grid" id="product-carousel">
+            <article class="product-card">
+              <a href="#" class="product-link">
+                <div class="product-image"></div>
+                <div class="product-info">
+                  <h3>Product title</h3>
+                  <p class="product-price">1499 kr</p>
+                </div>
+              </a>
+            </article>
 
-          <article class="product-card">
-            <a href="#" class="product-link">
-              <div class="product-image"></div>
-              <div class="product-info">
-                <h3>Product title</h3>
-                <p class="product-price">1499 kr</p>
-              </div>
-            </a>
-          </article>
+            <article class="product-card">
+              <a href="#" class="product-link">
+                <div class="product-image"></div>
+                <div class="product-info">
+                  <h3>Product title</h3>
+                  <p class="product-price">1499 kr</p>
+                </div>
+              </a>
+            </article>
 
-          <article class="product-card">
-            <a href="#" class="product-link">
-              <div class="product-image"></div>
-              <div class="product-info">
-                <h3>Product title</h3>
-                <p class="product-price">1499 kr</p>
-              </div>
-            </a>
-          </article>
+            <article class="product-card">
+              <a href="#" class="product-link">
+                <div class="product-image"></div>
+                <div class="product-info">
+                  <h3>Product title</h3>
+                  <p class="product-price">1499 kr</p>
+                </div>
+              </a>
+            </article>
 
-          <article class="product-card">
-            <a href="#" class="product-link">
-              <div class="product-image"></div>
-              <div class="product-info">
-                <h3>Product title</h3>
-                <p class="product-price">1499 kr</p>
-              </div>
-            </a>
-          </article>
+            <article class="product-card">
+              <a href="#" class="product-link">
+                <div class="product-image"></div>
+                <div class="product-info">
+                  <h3>Product title</h3>
+                  <p class="product-price">1499 kr</p>
+                </div>
+              </a>
+            </article>
 
-          <article class="product-card">
-            <a href="#" class="product-link">
-              <div class="product-image"></div>
-              <div class="product-info">
-                <h3>Product title</h3>
-                <p class="product-price">1499 kr</p>
-              </div>
-            </a>
-          </article>
-        </div>
+            <article class="product-card">
+              <a href="#" class="product-link">
+                <div class="product-image"></div>
+                <div class="product-info">
+                  <h3>Product title</h3>
+                  <p class="product-price">1499 kr</p>
+                </div>
+              </a>
+            </article>
+          </div>
 
-        <div class="carousel-controls">
-          <button
-            type="button"
-            aria-label="Föregående produkter"
-            data-direction="-1"
-          >
-            <img src="assets/icons/chevron_backward.svg" alt="" />
-          </button>
+          <div class="carousel-controls">
+            <button
+              type="button"
+              aria-label="Föregående produkter"
+              data-direction="-1"
+            >
+              <img src="assets/icons/chevron_backward.svg" alt="" />
+            </button>
 
-          <button type="button" aria-label="Nästa produkter" data-direction="1">
-            <img src="assets/icons/keyboard_arrow_right.svg" alt="" />
-          </button>
+            <button
+              type="button"
+              aria-label="Nästa produkter"
+              data-direction="1"
+            >
+              <img src="assets/icons/keyboard_arrow_right.svg" alt="" />
+            </button>
+          </div>
         </div>
       </section>
 
-      <!-- Signup section - Event -->
+      <!-- EVENT SECTION -->
       <section class="event-section">
         <div class="event-content">
           <p class="eyebrow">Säkra din plats</p>
-
           <h2>SPÅR x Attenborough</h2>
 
           <p>
@@ -182,9 +182,9 @@
           </p>
 
           <form action="" class="event-form">
-            <label for="event-email" class="visually-hidden"
-              >E-postadress</label
-            >
+            <label for="event-email" class="visually-hidden">
+              E-postadress
+            </label>
             <input
               type="email"
               id="event-email"
@@ -197,62 +197,67 @@
         </div>
       </section>
 
-      <!-- Category section -->
+      <!-- CATEGORY SECTION -->
       <section class="category-section">
-        <h2>Säsongens favoriter</h2>
-        <div class="category-carousel" id="category-carousel">
-          <article class="category-card">
-            <a href="#">
-              <div class="category-image">
-                <h3>Category</h3>
-              </div>
-            </a>
-          </article>
+        <div class="section-inner">
+          <h2>Säsongens favoriter</h2>
 
-          <article class="category-card">
-            <a href="#">
-              <div class="category-image">
-                <h3>Category</h3>
-              </div>
-            </a>
-          </article>
+          <div class="category-carousel" id="category-carousel">
+            <article class="category-card">
+              <a href="#">
+                <div class="category-image">
+                  <h3>Category</h3>
+                </div>
+              </a>
+            </article>
 
-          <article class="category-card">
-            <a href="#">
-              <div class="category-image">
-                <h3>Category</h3>
-              </div>
-            </a>
-          </article>
-        </div>
+            <article class="category-card">
+              <a href="#">
+                <div class="category-image">
+                  <h3>Category</h3>
+                </div>
+              </a>
+            </article>
 
-        <div class="carousel-controls">
-          <button
-            type="button"
-            aria-label="Föregående kategorier"
-            data-direction="-1"
-          >
-            <img src="assets/icons/chevron_backward.svg" alt="" />
-          </button>
-          <button
-            type="button"
-            aria-label="Nästa kategorier"
-            data-direction="1"
-          >
-            <img src="assets/icons/keyboard_arrow_right.svg" alt="" />
-          </button>
+            <article class="category-card">
+              <a href="#">
+                <div class="category-image">
+                  <h3>Category</h3>
+                </div>
+              </a>
+            </article>
+          </div>
+
+          <div class="carousel-controls">
+            <button
+              type="button"
+              aria-label="Föregående kategorier"
+              data-direction="-1"
+            >
+              <img src="assets/icons/chevron_backward.svg" alt="" />
+            </button>
+
+            <button
+              type="button"
+              aria-label="Nästa kategorier"
+              data-direction="1"
+            >
+              <img src="assets/icons/keyboard_arrow_right.svg" alt="" />
+            </button>
+          </div>
         </div>
       </section>
 
-      <!-- Content section -->
+      <!-- CONTENT SECTION -->
       <section class="content-section">
-        <div class="section-content">
+        <div class="section-inner">
           <h2>Jackans spår</h2>
         </div>
+
         <div class="content-image"></div>
       </section>
 
-      <!-- Split section -->
+      <!-- SPLIT SECTION -->
       <section class="split-section">
         <div class="split-content">
           <h2>Hållbarhet</h2>
@@ -269,30 +274,27 @@
 
       <!-- GALLERY SECTION -->
       <section class="gallery-section">
-        <h2>Community</h2>
+        <div class="section-inner">
+          <h2>Community</h2>
+        </div>
 
         <div class="gallery-carousel-wrapper">
           <div class="gallery-carousel" id="gallery-carousel">
             <article class="gallery-card">
               <div class="gallery-image"></div>
             </article>
-
             <article class="gallery-card">
               <div class="gallery-image"></div>
             </article>
-
             <article class="gallery-card">
               <div class="gallery-image"></div>
             </article>
-
             <article class="gallery-card">
               <div class="gallery-image"></div>
             </article>
-
             <article class="gallery-card">
               <div class="gallery-image"></div>
             </article>
-
             <article class="gallery-card">
               <div class="gallery-image"></div>
             </article>
@@ -314,37 +316,42 @@
         </div>
       </section>
 
-      <!-- Newsletter section -->
+      <!-- NEWSLETTER SECTION -->
       <section class="newsletter-section">
-        <h2>Bli en del av vårt community</h2>
-        <p>
-          Oroa dig inte, vi gillar inte heller spam. Vi kommer bara skicka
-          e-mail för exklusiva events och förmåner.
-        </p>
+        <div class="section-inner">
+          <h2>Bli en del av vårt community</h2>
+          <p>
+            Oroa dig inte, vi gillar inte heller spam. Vi kommer bara skicka
+            e-mail för exklusiva events och förmåner.
+          </p>
 
-        <form class="newsletter-form">
-          <label for="newsletter-email"></label>
+          <form class="newsletter-form">
+            <label for="newsletter-email" class="visually-hidden">
+              E-postadress
+            </label>
 
-          <input
-            type="email"
-            id="newsletter-email"
-            name="email"
-            placeholder="name@mailadress.com"
-            required
-          />
+            <input
+              type="email"
+              id="newsletter-email"
+              name="email"
+              placeholder="name@mailadress.com"
+              required
+            />
 
-          <button type="submit">Gå med</button>
-        </form>
+            <button type="submit">Gå med</button>
+          </form>
 
-        <p class="form-disclaimer">
-          Du kan alltid avregistrera om du ändrar dig!
-        </p>
+          <p class="form-disclaimer">
+            Du kan alltid avregistrera om du ändrar dig!
+          </p>
+        </div>
       </section>
     </main>
 
     <!-- FOOTER -->
     <footer class="site-footer">
       <a href="/" class="footer-logo">SPÅR</a>
+
       <div class="footer-content">
         <nav class="footer-column">
           <h2>Hjälp</h2>
