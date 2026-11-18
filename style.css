@@ -538,7 +538,7 @@ section h2 {
 
 .content-carousel {
   display: flex;
-  gap: 16px;
+  gap: 40px;
   overflow-x: auto;
   overflow-y: hidden;
   width: 100%;
