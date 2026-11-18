@@ -633,12 +633,6 @@ section h2 {
   margin-top: 16px;
 }
 
-.newsletter-form label {
-  width: 100%;
-  text-align: left;
-  font-size: var(--font-size-xs);
-}
-
 .newsletter-form input {
   flex: 1;
   min-width: 0;
