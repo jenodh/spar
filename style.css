@@ -255,6 +255,7 @@ section h2 {
   height: 560px;
   display: flex;
   align-items: flex-end;
+  margin-top: 0;
 }
 
 .hero-image {
