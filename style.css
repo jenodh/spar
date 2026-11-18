@@ -53,7 +53,8 @@
 
   /* Line height */
   --line-height-1: 1;
-  --line-height-xs: 1.09;
+  --line-height-2xs: 1.09;
+  --line-height-xs: 1.2;
   --line-height-sm: 1.25;
   --line-height-base: 1.5;
 
@@ -275,7 +276,7 @@ section h2 {
   font-family: var(--font-secondary);
   font-size: var(--font-size-4xl);
   font-weight: 400;
-  line-height: 1.08889;
+  line-height: var(--line-height-2xs);
   color: var(--neongreen-400);
 }
 
@@ -402,7 +403,7 @@ section h2 {
 
 .event-content .eyebrow {
   font-weight: 500;
-  line-height: var(--line-height-sm);
+  line-height: var(--line-height-2xs);
   letter-spacing: var(--letter-spacing-10);
   text-transform: uppercase;
   margin-bottom: var(--spacing-base);
@@ -703,46 +704,65 @@ section h2 {
 /* FOOTER */
 
 .site-footer {
-  padding: 32px 16px;
+  background-color: var(--teal-900);
+  padding: 60px 16px;
 }
 
 .footer-logo {
-  display: block;
-  font-size: var(--font-size-5xl);
-  font-weight: 400;
-  margin-bottom: 32px;
+  display: flex;
+  width: 224px;
+  padding: 8px 8px 8px 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 60px;
+}
+
+.footer-logo img {
+  width: 205px;
 }
 
 .footer-content {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  color: var(--neutral-1);
 }
 
 .footer-column h2 {
   font-size: var(--font-size-lg);
   font-weight: 400;
   text-transform: uppercase;
-  margin-bottom: 12px;
+  line-height: var(--line-height-xs);
+  letter-spacing: var(--letter-spacing-5);
+  margin-bottom: 18px;
 }
 
 .footer-column ul {
   list-style: none;
   padding: 0;
-  margin-bottom: 40px;
+  margin: 0;
 }
 
 .footer-column li {
   font-size: var(--font-size-base);
-  margin-bottom: 8px;
+  line-height: var(--line-height-sm);
+  margin-bottom: 24px;
+}
+
+.footer-column li:last-child {
+  margin-bottom: 0;
+}
+
+.footer-column:not(:last-child) {
+  margin-bottom: 60px;
 }
 
 .social-links {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   gap: 16px;
-  margin-top: 32px;
+  margin-top: 80px;
 }
 
 .social-links img {
