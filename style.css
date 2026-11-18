@@ -96,9 +96,15 @@ body {
   max-width: 100%;
 }
 
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
   margin: 0;
   font-family: var(--font-primary);
+  font-weight: 400;
   color: var(--neutral-1000);
   background-color: var(--neutral-1);
 }
@@ -537,12 +543,9 @@ section h2 {
 
 .split-content {
   width: 100%;
-  background-color: #c8c6c6;
-  padding: 24px 16px 40px;
-}
-
-.split-content h2 {
-  margin-bottom: 8px;
+  background-color: var(--teal-900);
+  color: var(--neutral-1);
+  padding: 60px 16px;
 }
 
 .split-content p {
