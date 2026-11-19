@@ -1097,14 +1097,6 @@ section h2 {
 
   .content-image {
     height: 700px;
-    padding: 40px;
-  }
-
-  .content-image p {
-    max-width: 400px;
-    font-size: 24px;
-    text-align: center;
-    line-height: 1.5;
   }
 
   /* CONTENT SECTION CARDS */
