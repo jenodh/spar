@@ -50,9 +50,11 @@
   --font-size-3xl: calc(40rem / 16);
   --font-size-4xl: calc(45rem / 16);
   --font-size-5xl: calc(64rem / 16);
+  --font-size-6xl: calc(90rem / 16);
 
   /* Line height */
   --line-height-1: 1;
+  --line-heigt-3xs: 1.05;
   --line-height-2xs: 1.09;
   --line-height-xs: 1.2;
   --line-height-sm: 1.25;
@@ -69,14 +71,14 @@
   --spacing-base: 16px;
   --spacing-lg: 24px;
   --spacing-xl: 32px;
-  --spacing-2xl: 40px;
+  --spacing-2xl: 48px;
   --spacing-3xl: 60px;
   --spacing-4xl: 64px;
 
   /* LAYOUT */
   --page-padding-mobile: 16px;
-  --page-padding-desktop: 40px;
-  --content-max-width: 1140px;
+  --page-padding-desktop: 48px;
+  --content-max-width: 1344px;
 
   /* BORDER RADIUS */
   --radius-sm: 4px;
@@ -283,7 +285,7 @@ section h2 {
 .hero-content p {
   font-size: var(--font-size-xl);
   font-weight: 400;
-  line-height: 1.58333;
+  line-height: var(--line-height-base);
   letter-spacing: calc(-0.264rem / 16);
   color: var(--neutral-1);
   margin-bottom: 24px;
@@ -837,10 +839,6 @@ section h2 {
 @media (min-width: 1024px) {
   /* GENERAL */
 
-  section {
-    margin: 64px 0;
-  }
-
   .section-inner {
     padding-inline: var(--page-padding-desktop);
   }
@@ -863,7 +861,7 @@ section h2 {
     justify-content: flex-start;
     height: 72px;
     gap: 48px;
-    padding: 12px 32px;
+    padding: 12px var(--page-padding-desktop);
     background-color: var(--neutral-1);
   }
 
@@ -925,28 +923,32 @@ section h2 {
   /* HERO */
 
   .hero {
-    height: 630px;
+    height: 700px;
     align-items: flex-end;
+  }
+
+  .hero-image img {
+    object-position: center 30%;
   }
 
   .hero-content {
     max-width: 900px;
-    padding: 40px;
+    padding: 34px 48px;
   }
 
   .hero-content h1 {
-    font-size: calc(96rem / 16);
-    margin-bottom: 8px;
+    font-size: var(--font-size-6xl);
+    line-height: var(--line-heigt-3xs);
   }
 
   .hero-content p {
-    font-size: calc(32rem / 16);
-    margin-bottom: 32px;
+    font-size: var(--font-size-2xl);
+    margin-bottom: 40px;
   }
 
   .button {
     font-size: 16px;
-    padding: 12px 20px;
+    padding: 8px 12px;
   }
 
   /* PRODUCT SECTION */
@@ -987,8 +989,8 @@ section h2 {
   /* EVENT SECTION */
 
   .event-section {
-    height: 450px;
-    padding: 64px 40px;
+    height: 700px;
+    padding: 64px var(--spacing-2xl);
     text-align: center;
   }
 
@@ -1038,7 +1040,7 @@ section h2 {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
-    max-width: 1120px;
+    max-width: 1115px;
     margin: 0 auto;
     overflow: visible;
     scroll-snap-type: none;
@@ -1246,7 +1248,7 @@ section h2 {
       ". social";
     column-gap: 48px;
     row-gap: 32px;
-    padding: 64px 40px 32px;
+    padding: 64px var(--page-padding-desktop) 32px;
   }
 
   .footer-logo {
