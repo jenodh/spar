@@ -79,6 +79,8 @@
   --page-padding-mobile: 16px;
   --page-padding-desktop: 48px;
   --content-max-width: 1344px;
+  --section-spacing-desktop: 120px;
+  --section-spacing-mobile: 32px;
 
   /* BORDER RADIUS */
   --radius-sm: 4px;
@@ -140,8 +142,15 @@ p {
 
 /* GENERAL LAYOUT */
 
-section {
-  margin: 32px 0;
+.hero,
+.product-section,
+.event-section,
+.category-section,
+.content-section,
+.content-cards,
+.split-section,
+.gallery-section {
+  margin-bottom: var(--section-spacing-mobile);
 }
 
 .section-inner {
@@ -151,7 +160,7 @@ section {
 section h2 {
   font-size: var(--font-size-xl);
   font-weight: 500;
-  line-height: var(--font-size-xl);
+  line-height: var(--line-height-1);
   margin-bottom: var(--spacing-base);
 }
 
@@ -839,12 +848,25 @@ section h2 {
 @media (min-width: 1024px) {
   /* GENERAL */
 
+  .hero,
+  .product-section,
+  .event-section,
+  .category-section,
+  .content-section,
+  .content-cards,
+  .split-section,
+  .gallery-section {
+    margin-bottom: var(--section-spacing-desktop);
+  }
+
   .section-inner {
     padding-inline: var(--page-padding-desktop);
   }
 
   section h2 {
-    font-size: 24px;
+    font-size: var(--font-size-2xl);
+    text-align: center;
+    line-height: var(--line-height-1);
     margin-bottom: 40px;
   }
 
@@ -953,44 +975,42 @@ section h2 {
 
   /* PRODUCT SECTION */
 
-  .product-section .section-header {
-    text-align: center;
-  }
-
   .product-grid {
-    gap: 24px;
-    max-width: var(--content-max-width);
-    margin: 0 auto;
+    display: flex;
+    gap: 36px;
+    width: calc(100% + var(--page-padding-desktop));
+    max-width: none;
+    margin: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
   }
 
   .product-card {
-    flex: 0 0 calc((100% - 48px) / 3);
+    flex: 0 0 calc((100vw - 48px - (4 * 24px) - 80px) / 4);
+    min-width: 0;
   }
 
   .product-image {
     width: 100%;
     height: auto;
     aspect-ratio: 3 / 4;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
   }
 
   .product-card h3,
   .product-price {
     font-size: var(--font-size-lg);
-    font-weight: 400;
   }
 
   .product-section .carousel-controls {
-    justify-content: flex-end;
     max-width: var(--content-max-width);
-    margin: 24px auto 0;
+    margin: 48px auto 0;
   }
 
   /* EVENT SECTION */
 
   .event-section {
     height: 700px;
-    padding: 64px var(--spacing-2xl);
     text-align: center;
   }
 
