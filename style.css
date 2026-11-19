@@ -1015,38 +1015,39 @@ section h2 {
   }
 
   .event-content {
-    max-width: 900px;
+    max-width: 808px;
   }
 
   .event-content .eyebrow {
-    font-size: 30px;
-    margin-bottom: 12px;
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-xs);
+    margin-bottom: var(--spacing-lg);
   }
 
   .event-content h2 {
-    font-size: var(--font-size-5xl);
-    margin-bottom: 24px;
+    font-size: var(--font-size-6xl);
+    line-height: var(--line-heigt-3xs);
+    margin-bottom: 73px;
   }
 
   .event-content p {
-    font-size: 16px;
+    font-size: var(--font-size-lg);
+    margin-bottom: 73px;
   }
 
   .event-form {
     justify-content: center;
     flex-wrap: nowrap;
-    max-width: 480px;
+    max-width: 358px;
     margin: 16px auto 0;
   }
 
   .event-form input {
     flex: 1;
     min-width: 0;
-    font-size: 14px;
   }
 
   .event-form button {
-    font-size: 14px;
     white-space: nowrap;
   }
 
