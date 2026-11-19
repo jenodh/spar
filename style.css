@@ -1053,14 +1053,11 @@ section h2 {
 
   /* CATEGORY SECTION */
 
-  .category-section > .section-inner > h2 {
-    text-align: center;
-  }
-
   .category-carousel {
+    align-items: center;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
+    gap: auto;
     max-width: 1115px;
     margin: 0 auto;
     overflow: visible;
@@ -1068,17 +1065,23 @@ section h2 {
   }
 
   .category-card {
-    min-width: 0;
+    max-width: 318px;
+    position: relative;
   }
 
   .category-image {
-    width: 100%;
-    height: auto;
+    display: block;
     aspect-ratio: 3 / 4;
+    object-fit: cover;
   }
 
   .category-image h3 {
-    font-size: 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: var(--font-size-xl);
+    text-align: center;
   }
 
   .category-section .carousel-controls {
