@@ -41,7 +41,8 @@
   --font-secondary: "Array", sans-serif;
 
   /* Font size */
-  --font-size-xs: calc(11rem / 16);
+  --font-size-2xs: calc(11rem / 16);
+  --font-size-xs: calc(12rem / 16);
   --font-size-sm: calc(14rem / 16);
   --font-size-base: calc(16rem / 16);
   --font-size-lg: calc(20rem / 16);
@@ -717,7 +718,6 @@ section h2 {
 }
 
 .newsletter-section h2 {
-  font-size: var(--font-size-xl);
   line-height: var(--line-height-1);
   margin-bottom: 8px;
 }
@@ -770,7 +770,6 @@ section h2 {
 .form-disclaimer {
   font-size: var(--font-size-base);
   margin-top: 16px;
-  margin-bottom: 0px;
 }
 
 /* FOOTER */
@@ -1218,40 +1217,38 @@ section h2 {
 
   .newsletter-section {
     height: 330px;
-    padding: 48px 0;
     align-items: center;
     text-align: center;
   }
 
   .newsletter-section h2 {
-    font-size: 24px;
     margin-bottom: 12px;
   }
 
-  .newsletter-section > .section-inner > p {
-    font-size: 14px;
-    max-width: 600px;
-    margin-inline: auto;
+  .newsletter-section p {
+    font-size: var(--font-size-sm);
   }
 
   .newsletter-form {
-    max-width: 480px;
+    justify-content: center;
     flex-wrap: nowrap;
-    margin: 20px auto 0;
+    max-width: 358px;
+    margin: 16px auto 0;
   }
 
   .newsletter-form input {
-    font-size: 14px;
+    flex: 1;
+    min-width: 0;
   }
 
   .newsletter-form button {
-    font-size: 14px;
     white-space: nowrap;
   }
 
-  .form-disclaimer {
-    font-size: 12px;
-    margin-top: 12px;
+  .newsletter-section .form-disclaimer {
+    font-size: var(--font-size-xs);
+    margin-top: 16px;
+    margin-bottom: 0;
   }
 
   /* FOOTER */
