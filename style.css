@@ -1198,16 +1198,19 @@ section h2 {
 
   .gallery-section .carousel-controls {
     position: absolute;
-    top: 50%;
-    left: 24px;
-    right: 24px;
+    top: 208px;
+    left: 48px;
+    right: 48px;
     transform: translateY(-50%);
+    display: flex;
     justify-content: space-between;
     margin: 0;
     pointer-events: none;
+    z-index: 2;
   }
 
   .gallery-section .carousel-controls button {
+    background-color: var(--neongreen-100);
     pointer-events: auto;
   }
 
