@@ -1171,26 +1171,27 @@ section h2 {
 
   /* GALLERY SECTION */
 
-  .gallery-section {
-    padding: 64px 0;
-  }
-
   .gallery-section .section-inner h2 {
     text-align: center;
   }
 
   .gallery-carousel {
+    display: flex;
+    gap: calc((100% - (4 * 318px)) / 3);
+    width: 100%;
+    overflow-x: auto;
     position: relative;
-    gap: 24px;
   }
 
   .gallery-card {
-    flex: 0 0 calc((100% - 72px) / 4);
+    flex: 0 0 318px;
   }
 
   .gallery-image {
-    width: 100%;
-    aspect-ratio: 3 / 4;
+    display: block;
+    width: 318px;
+    height: 416px;
+    object-fit: cover;
   }
 
   /* GALLERY ARROWS */

@@ -96,23 +96,29 @@ const galleryButtons = document.querySelectorAll(
   ".gallery-section .carousel-controls button",
 );
 
-galleryButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const direction = Number(button.dataset.direction);
+if (galleryCarousel) {
+  galleryButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const direction = Number(button.dataset.direction);
 
-    const galleryCard = galleryCarousel.querySelector(".gallery-card");
-    const cardWidth = galleryCard.offsetWidth;
+      const galleryCard = galleryCarousel.querySelector(".gallery-card");
+      const cardWidth = galleryCard.offsetWidth;
 
-    const gap = parseFloat(getComputedStyle(galleryCarousel).gap);
+      const carouselWidth = galleryCarousel.clientWidth;
 
-    const maxScroll = galleryCarousel.scrollWidth - galleryCarousel.clientWidth;
+      // Calculate gap based on four visible cards
+      const gap = (carouselWidth - cardWidth * 4) / 3;
 
-    const nextPosition =
-      galleryCarousel.scrollLeft + direction * (cardWidth + gap);
+      const maxScroll =
+        galleryCarousel.scrollWidth - galleryCarousel.clientWidth;
 
-    galleryCarousel.scrollTo({
-      left: Math.max(0, Math.min(nextPosition, maxScroll)),
-      behavior: "smooth",
+      const nextPosition =
+        galleryCarousel.scrollLeft + direction * (cardWidth + gap);
+
+      galleryCarousel.scrollTo({
+        left: Math.max(0, Math.min(nextPosition, maxScroll)),
+        behavior: "smooth",
+      });
     });
   });
-});
+}
