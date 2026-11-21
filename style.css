@@ -173,13 +173,12 @@ section h2 {
   align-items: center;
   background-color: var(--neongreen-200);
   height: 36px;
-  padding-inline: 16px;
 }
 
 .top-banner nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
 }
 
@@ -191,23 +190,21 @@ section h2 {
   font-size: var(--font-size-sm);
   font-weight: 500;
   line-height: var(--line-height-base);
-  padding-right: 4px;
-  letter-spacing: -0.009625rem;
+  padding-right: 16px;
 }
 
 .second {
   font-size: var(--font-size-base);
   font-weight: 700;
   line-height: var(--line-height-base);
-  padding-inline: 12px;
+  padding-inline: 15px;
 }
 
 .third {
   font-size: var(--font-size-sm);
   font-weight: 500;
   line-height: var(--line-height-base);
-  padding-left: 4px;
-  letter-spacing: -0.009625rem;
+  padding-left: 16px;
 }
 
 /* LOGO */
