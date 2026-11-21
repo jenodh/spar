@@ -65,6 +65,19 @@ categoryButtons.forEach((button) => {
   });
 });
 
+// START POSITION - CATEGORY CAROUSEL (MOBILE)
+
+if (categoryCarousel && window.matchMedia("(max-width: 1023px)").matches) {
+  const categoryCards = categoryCarousel.querySelectorAll(".category-card");
+  const secondCard = categoryCards[1];
+
+  if (secondCard) {
+    categoryCarousel.scrollLeft =
+      secondCard.offsetLeft -
+      (categoryCarousel.clientWidth - secondCard.offsetWidth) / 2;
+  }
+}
+
 // CONTENT CAROUSEL
 
 const contentCarousel = document.querySelector("#content-carousel");
