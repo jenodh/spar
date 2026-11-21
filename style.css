@@ -333,10 +333,15 @@ section h2 {
 
 .product-grid {
   display: flex;
+  flex-wrap: nowrap;
   gap: 12px;
   overflow-x: auto;
   overflow-y: hidden;
-  max-width: 100%;
+  width: calc(100% + 32px);
+  max-width: none;
+  margin-inline: -16px;
+  padding-inline: 16px;
+  box-sizing: border-box;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   scrollbar-width: none;
@@ -352,7 +357,7 @@ section h2 {
 .product-card {
   flex: 0 0 calc(50% - 6px);
   min-width: 0;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
 }
 
 .product-link {
@@ -360,9 +365,9 @@ section h2 {
 }
 
 .product-image {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 3 / 4;
+  width: 171px;
+  height: 228px;
+  object-fit: cover;
   padding: var(--spacing-sm);
   margin-bottom: var(--spacing-sm);
   background-color: #a1a0a0;

@@ -22,6 +22,19 @@ productButtons.forEach((button) => {
   });
 });
 
+// START POSITION - PRODUCT CAROUSEL (MOBILE)
+
+if (window.matchMedia("(max-width: 1023px)").matches) {
+  const productCards = productCarousel.querySelectorAll(".product-card");
+  const secondCard = productCards[1];
+
+  if (secondCard) {
+    productCarousel.scrollLeft =
+      secondCard.offsetLeft -
+      (productCarousel.clientWidth - secondCard.offsetWidth) / 2;
+  }
+}
+
 // Category carousel
 
 const categoryCarousel = document.querySelector("#category-carousel");
