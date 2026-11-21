@@ -63,3 +63,18 @@ setupCarousel("content-carousel", ".content-cards", ".content-card");
 
 // GALLERY CAROUSEL
 setupCarousel("gallery-carousel", ".gallery-section", ".gallery-card");
+
+// Toggle video playback (play/pause)
+
+const video = document.querySelector(".content-image video");
+const videoToggle = document.querySelector(".video-toggle");
+
+videoToggle.addEventListener("click", () => {
+  if (video.paused) {
+    video.play();
+    videoToggle.setAttribute("aria-label", "Pausa video");
+  } else {
+    video.pause();
+    videoToggle.setAttribute("aria-label", "Spela upp video");
+  }
+});
