@@ -903,13 +903,14 @@ section h2 {
     align-items: center;
     justify-content: flex-start;
     height: 72px;
-    gap: 48px;
-    padding: 12px var(--page-padding-desktop);
+    padding: 12px 48px;
     background-color: var(--neutral-1);
   }
 
   .logo {
-    font-size: var(--font-size-2xl);
+    margin-top: 3px;
+    margin-bottom: 10px;
+    margin-right: 80px;
   }
 
   .mobile-actions {
@@ -920,38 +921,45 @@ section h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 32px;
+    gap: 60px;
     font-size: var(--font-size-base);
+  }
+
+  .desktop-nav a {
+    padding: 8px 12px;
   }
 
   .desktop-tools {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 12px;
     margin-left: auto;
   }
 
   .desktop-search {
     display: flex;
     align-items: center;
+    width: 298px;
+    height: 44px;
     gap: 8px;
-    padding: 8px 14px;
-    border-radius: 20px;
+    padding: 4px 12px;
+    border-radius: 999px;
     background-color: #f1f1f1;
   }
 
   .desktop-search img {
-    width: 16px;
-    height: 16px;
+    width: 24px;
+    height: 24px;
   }
 
   .desktop-search input {
-    width: 140px;
+    width: 242px;
     padding: 0;
     border: none;
     outline: none;
     background: transparent;
-    font-size: 13px;
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
   }
 
   .desktop-tools button {
@@ -961,6 +969,17 @@ section h2 {
     border: none;
     background: none;
     padding: 4px;
+  }
+
+  .language-selector {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: 20px;
+    font-size: var(--font-size-lg);
+    font-weight: 400;
+    line-height: var(--line-height-base);
+    text-transform: uppercase;
   }
 
   /* HERO */
