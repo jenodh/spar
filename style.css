@@ -872,8 +872,30 @@ section h2 {
   /* HEADER */
 
   .top-banner {
-    height: 46px;
-    font-size: var(--font-size-lg);
+    height: 44px;
+  }
+
+  .top-banner nav {
+    justify-content: center;
+    gap: 0;
+  }
+
+  .top-banner .first,
+  .top-banner .second,
+  .top-banner .third {
+    font-size: var(--font-size-base);
+  }
+
+  .first {
+    padding-right: 20px;
+  }
+
+  .second {
+    padding-inline: 20px;
+  }
+
+  .third {
+    padding-left: 20px;
   }
 
   .main-header {
