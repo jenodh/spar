@@ -1070,6 +1070,7 @@ section h2 {
   .product-card {
     flex: 0 0 calc((100vw - 48px - (4 * 24px) - 80px) / 4);
     min-width: 0;
+    scroll-snap-align: start;
   }
 
   .product-image {
