@@ -574,10 +574,15 @@ section h2 {
 
 .content-carousel {
   display: flex;
+  flex-wrap: nowrap;
   gap: 40px;
   overflow-x: auto;
   overflow-y: hidden;
-  width: 100%;
+  width: calc(100% + 32px);
+  max-width: none;
+  margin-inline: -16px;
+  padding-inline: 16px;
+  box-sizing: border-box;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   scrollbar-width: none;
@@ -595,7 +600,7 @@ section h2 {
   gap: 16px;
   width: 250px;
   flex: 0 0 250px;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
 }
 
 .content-card-image {
@@ -676,10 +681,15 @@ section h2 {
 
 .gallery-carousel {
   display: flex;
+  flex-wrap: nowrap;
   gap: 16px;
   overflow-x: auto;
   overflow-y: hidden;
-  width: 100%;
+  width: calc(100% + 32px);
+  max-width: none;
+  margin-inline: -16px;
+  padding-inline: 16px;
+  box-sizing: border-box;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   scrollbar-width: none;
@@ -689,7 +699,7 @@ section h2 {
 .gallery-card {
   flex: 0 0 calc(50% - 6px);
   min-width: 0;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
 }
 
 .gallery-image {
@@ -1249,14 +1259,25 @@ section h2 {
 
   .gallery-carousel {
     display: flex;
-    gap: calc((100% - (4 * 318px)) / 3);
+    justify-content: flex-start;
+    gap: max(0px, calc((100vw - 1272px) / 3));
     width: 100%;
-    overflow-x: auto;
-    position: relative;
+    max-width: none;
+    margin-inline: 0;
+    padding-inline: 0;
+    box-sizing: border-box;
   }
 
   .gallery-card {
     flex: 0 0 318px;
+    width: 318px;
+  }
+
+  .gallery-image {
+    display: block;
+    width: 318px;
+    height: 416px;
+    object-fit: cover;
   }
 
   .gallery-image {

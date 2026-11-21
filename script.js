@@ -114,6 +114,19 @@ if (contentCarousel) {
   });
 }
 
+// START POSITION - CONTENT CAROUSEL (MOBILE)
+
+if (contentCarousel && window.matchMedia("(max-width: 1023px)").matches) {
+  const contentCards = contentCarousel.querySelectorAll(".content-card");
+  const secondCard = contentCards[1];
+
+  if (secondCard) {
+    contentCarousel.scrollLeft =
+      secondCard.offsetLeft -
+      (contentCarousel.clientWidth - secondCard.offsetWidth) / 2;
+  }
+}
+
 // Gallery Carousel
 
 const galleryCarousel = document.querySelector("#gallery-carousel");
@@ -130,21 +143,25 @@ if (galleryCarousel) {
       const galleryCard = galleryCarousel.querySelector(".gallery-card");
       const cardWidth = galleryCard.offsetWidth;
 
-      const carouselWidth = galleryCarousel.clientWidth;
+      const gap = parseFloat(getComputedStyle(galleryCarousel).gap);
 
-      // Calculate gap based on four visible cards
-      const gap = (carouselWidth - cardWidth * 4) / 3;
-
-      const maxScroll =
-        galleryCarousel.scrollWidth - galleryCarousel.clientWidth;
-
-      const nextPosition =
-        galleryCarousel.scrollLeft + direction * (cardWidth + gap);
-
-      galleryCarousel.scrollTo({
-        left: Math.max(0, Math.min(nextPosition, maxScroll)),
+      galleryCarousel.scrollBy({
+        left: direction * (cardWidth + gap),
         behavior: "smooth",
       });
     });
   });
+}
+
+// START POSITION - GALLERY CAROUSEL (MOBILE)
+
+if (galleryCarousel && window.matchMedia("(max-width: 1023px)").matches) {
+  const galleryCards = galleryCarousel.querySelectorAll(".gallery-card");
+  const secondCard = galleryCards[1];
+
+  if (secondCard) {
+    galleryCarousel.scrollLeft =
+      secondCard.offsetLeft -
+      (galleryCarousel.clientWidth - secondCard.offsetWidth) / 2;
+  }
 }
