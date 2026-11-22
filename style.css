@@ -558,6 +558,8 @@ section h2 {
   width: calc(100% + 32px);
   margin-inline: -16px;
   padding-inline: var(--spacing-base);
+  list-style: none;
+  padding-block: 0;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   scrollbar-width: none;
@@ -568,6 +570,10 @@ section h2 {
   flex: 0 0 254px;
   min-width: 0;
   scroll-snap-align: center;
+}
+
+.category-card a {
+  display: block;
 }
 
 .category-image {
@@ -587,6 +593,7 @@ section h2 {
   font-weight: var(--font-weight-medium);
   line-height: var(--line-height-1);
   color: var(--neutral-1);
+  text-transform: uppercase;
 }
 
 /* CONTENT SECTION */
