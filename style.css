@@ -1446,9 +1446,17 @@ section h2 {
     margin-top: 0;
   }
 
+  .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    min-height: 24px;
+  }
+
   .social-links img {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
   }
 }
 
