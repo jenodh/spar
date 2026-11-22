@@ -1,82 +1,190 @@
-// Product carousel
+// CAROUSEL FUNCTION
 
-const productCarousel = document.querySelector("#product-carousel");
+function setupCarousel(carouselId, sectionSelector, cardSelector) {
+  const carousel = document.querySelector(`#${carouselId}`);
 
-const productButtons = document.querySelectorAll(
-  ".product-section .carousel-controls button",
-);
+  if (!carousel) return;
 
-productButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const direction = Number(button.dataset.direction);
+  const buttons = document.querySelectorAll(
+    `${sectionSelector} .carousel-controls button`,
+  );
 
-    const productCard = productCarousel.querySelector(".product-card");
-    const cardWidth = productCard.offsetWidth;
+  // CAROUSEL CONTROLS
 
-    const gap = parseFloat(getComputedStyle(productCarousel).gap);
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const direction = Number(button.dataset.direction);
+      const card = carousel.querySelector(cardSelector);
 
-    productCarousel.scrollBy({
-      left: direction * (cardWidth + gap),
-      behavior: "smooth",
+      if (!card) return;
+
+      const cardWidth = card.offsetWidth;
+      const gap = parseFloat(getComputedStyle(carousel).gap) || 0;
+
+      const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+
+      const nextPosition = Math.max(
+        0,
+        Math.min(
+          carousel.scrollLeft + direction * (cardWidth + gap),
+          maxScroll,
+        ),
+      );
+
+      carousel.scrollTo({
+        left: nextPosition,
+        behavior: "smooth",
+      });
     });
   });
-});
 
-// Category carousel
+  // START POSITION - MOBILE
 
-const categoryCarousel = document.querySelector("#category-carousel");
+  if (window.matchMedia("(max-width: 1023px)").matches) {
+    const cards = carousel.querySelectorAll(cardSelector);
+    const secondCard = cards[1];
 
-const categoryButtons = document.querySelectorAll(
-  ".category-section .carousel-controls button",
+    if (secondCard) {
+      carousel.scrollLeft =
+        secondCard.offsetLeft -
+        (carousel.clientWidth - secondCard.offsetWidth) / 2;
+    }
+  }
+}
+
+// PRODUCT CAROUSEL
+setupCarousel("product-carousel", ".product-section", ".product-card");
+
+// CATEGORY CAROUSEL
+setupCarousel("category-carousel", ".category-section", ".category-card");
+
+// CONTENT CAROUSEL
+setupCarousel("content-carousel", ".content-cards", ".content-card");
+
+// GALLERY CAROUSEL
+setupCarousel("gallery-carousel", ".gallery-section", ".gallery-card");
+
+// VIDEO TOGGLE (PLAY/PAUSE)
+
+const video = document.querySelector(".content-image video");
+const videoToggle = document.querySelector(".video-toggle");
+const videoIcon = document.querySelector(".video-toggle-icon");
+
+if (video && videoToggle && videoIcon) {
+  function updateVideoButton() {
+    const isPlaying = !video.paused && !video.ended;
+
+    videoToggle.setAttribute(
+      "aria-label",
+      isPlaying ? "Pausa video" : "Spela upp video",
+    );
+
+    videoIcon.textContent = isPlaying ? "Ⅱ" : "⏵";
+  }
+
+  videoToggle.addEventListener("click", async () => {
+    if (video.paused) {
+      try {
+        await video.play();
+      } catch (error) {
+        updateVideoButton();
+      }
+    } else {
+      video.pause();
+    }
+  });
+
+  video.addEventListener("play", updateVideoButton);
+  video.addEventListener("pause", updateVideoButton);
+  video.addEventListener("ended", updateVideoButton);
+
+  updateVideoButton();
+}
+
+// EVENT FORM
+
+const eventForm = document.querySelector(".event-form");
+const emailInput = document.querySelector("#event-email");
+const emailError = document.querySelector("#email-error");
+const formSuccess = document.querySelector(".form-success");
+
+if (eventForm) {
+  eventForm.noValidate = true;
+  eventForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    // Clear previous messages
+    emailError.textContent = "";
+    formSuccess.textContent = "";
+    emailInput.removeAttribute("aria-invalid");
+
+    // Check if the email is valid
+    if (!emailInput.validity.valid) {
+      if (emailInput.validity.valueMissing) {
+        emailError.textContent = "Fyll i din e-postadress.";
+      } else {
+        emailError.textContent = "Ange en giltig e-postadress.";
+      }
+
+      emailInput.setAttribute("aria-invalid", "true");
+      emailInput.focus();
+
+      return;
+    }
+
+    // Show confirmation message
+    formSuccess.textContent = "Tack! Din anmälan är mottagen.";
+
+    // Clear the input
+    eventForm.reset();
+  });
+
+  // Clear error when the user starts typing
+  emailInput.addEventListener("input", () => {
+    emailError.textContent = "";
+    emailInput.removeAttribute("aria-invalid");
+  });
+}
+
+// NEWSLETTER FORM
+
+const newsletterForm = document.querySelector(".newsletter-form");
+const newsletterInput = document.querySelector("#newsletter-email");
+const newsletterError = document.querySelector("#newsletter-error");
+const newsletterSuccess = document.querySelector(
+  ".newsletter-section .form-success",
 );
 
-categoryButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const direction = Number(button.dataset.direction);
+if (newsletterForm) {
+  newsletterForm.noValidate = true;
 
-    const categoryCard = categoryCarousel.querySelector(".category-card");
-    const cardWidth = categoryCard.offsetWidth;
+  newsletterForm.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-    const gap = parseFloat(getComputedStyle(categoryCarousel).gap);
+    newsletterError.textContent = "";
+    newsletterSuccess.textContent = "";
+    newsletterInput.removeAttribute("aria-invalid");
 
-    const maxScroll =
-      categoryCarousel.scrollWidth - categoryCarousel.clientWidth;
+    if (!newsletterInput.validity.valid) {
+      if (newsletterInput.validity.valueMissing) {
+        newsletterError.textContent = "Fyll i din e-postadress.";
+      } else {
+        newsletterError.textContent = "Ange en giltig e-postadress.";
+      }
 
-    const nextPosition =
-      categoryCarousel.scrollLeft + direction * (cardWidth + gap);
+      newsletterInput.setAttribute("aria-invalid", "true");
+      newsletterInput.focus();
+      return;
+    }
 
-    categoryCarousel.scrollTo({
-      left: Math.max(0, Math.min(nextPosition, maxScroll)),
-      behavior: "smooth",
-    });
+    newsletterSuccess.textContent =
+      "Tack! Du är nu anmäld till vårt nyhetsbrev.";
+
+    newsletterForm.reset();
   });
-});
 
-// Gallery Carousel
-
-const galleryCarousel = document.querySelector("#gallery-carousel");
-
-const galleryButtons = document.querySelectorAll(
-  ".gallery-section .carousel-controls button",
-);
-
-galleryButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const direction = Number(button.dataset.direction);
-
-    const galleryCard = galleryCarousel.querySelector(".gallery-card");
-    const cardWidth = galleryCard.offsetWidth;
-
-    const gap = parseFloat(getComputedStyle(galleryCarousel).gap);
-
-    const maxScroll = galleryCarousel.scrollWidth - galleryCarousel.clientWidth;
-
-    const nextPosition =
-      galleryCarousel.scrollLeft + direction * (cardWidth + gap);
-
-    galleryCarousel.scrollTo({
-      left: Math.max(0, Math.min(nextPosition, maxScroll)),
-      behavior: "smooth",
-    });
+  newsletterInput.addEventListener("input", () => {
+    newsletterError.textContent = "";
+    newsletterInput.removeAttribute("aria-invalid");
   });
-});
+}
