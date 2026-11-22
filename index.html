@@ -32,10 +32,10 @@
 
       <div class="main-header">
         <a href="index.html" class="logo">
-          <img src="assets/logos/Logo_navigation.png" alt="Spår" />
+          <img src="assets/logos/Logo_navigation.png" alt="Spår – startsida" />
         </a>
 
-        <nav class="desktop-nav">
+        <nav class="desktop-nav" aria-label="Huvudmeny">
           <a href="#">Kvinna</a>
           <a href="#">Man</a>
           <a href="#">Skor</a>
@@ -45,35 +45,38 @@
         <div class="desktop-tools">
           <form action="" class="desktop-search" role="search">
             <img src="assets/icons/search.svg" alt="" />
-            <input type="search" placeholder="Sök" />
+            <label for="site-search" class="visually-hidden">
+              Sök på webbplatsen
+            </label>
+            <input type="search" id="site-search" placeholder="Sök" />
           </form>
-          <button type="button">
+          <button type="button" aria-label="Mitt konto">
             <img src="assets/icons/person.svg" alt="" />
           </button>
-          <button type="button">
+          <button type="button" aria-label="Varukorg">
             <img src="assets/icons/local_mall.svg" alt="" />
           </button>
 
-          <div class="language-selector">
-            <a href="#" aria-current="page">sv</a>
+          <nav class="language-selector" aria-label="Välj språk">
+            <a href="#" aria-current="page" lang="sv">sv</a>
             <span>/</span>
-            <a href="#">en</a>
-          </div>
+            <a href="#" lang="en">en</a>
+          </nav>
         </div>
 
         <div class="mobile-actions">
           <div class="action-container">
-            <button type="button">
+            <button type="button" aria-label="Sök">
               <img src="assets/icons/search.svg" alt="" />
             </button>
           </div>
           <div class="action-container">
-            <button type="button">
+            <button type="button" aria-label="Varukorg">
               <img src="assets/icons/local_mall.svg" alt="" class="cart-icon" />
             </button>
           </div>
           <div class="action-container">
-            <button type="button">
+            <button type="button" aria-label="Öppna meny">
               <img src="assets/icons/dehaze.svg" alt="" class="menu-icon" />
             </button>
           </div>
