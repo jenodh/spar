@@ -64,20 +64,42 @@ setupCarousel("content-carousel", ".content-cards", ".content-card");
 // GALLERY CAROUSEL
 setupCarousel("gallery-carousel", ".gallery-section", ".gallery-card");
 
-// Toggle video playback (play/pause)
+// VIDEO TOGGLE (PLAY/PAUSE)
 
 const video = document.querySelector(".content-image video");
 const videoToggle = document.querySelector(".video-toggle");
+const videoIcon = document.querySelector(".video-toggle-icon");
 
-videoToggle.addEventListener("click", () => {
-  if (video.paused) {
-    video.play();
-    videoToggle.setAttribute("aria-label", "Pausa video");
-  } else {
-    video.pause();
-    videoToggle.setAttribute("aria-label", "Spela upp video");
+if (video && videoToggle && videoIcon) {
+  function updateVideoButton() {
+    const isPlaying = !video.paused && !video.ended;
+
+    videoToggle.setAttribute(
+      "aria-label",
+      isPlaying ? "Pausa video" : "Spela upp video",
+    );
+
+    videoIcon.textContent = isPlaying ? "Ⅱ" : "⏵";
   }
-});
+
+  videoToggle.addEventListener("click", async () => {
+    if (video.paused) {
+      try {
+        await video.play();
+      } catch (error) {
+        updateVideoButton();
+      }
+    } else {
+      video.pause();
+    }
+  });
+
+  video.addEventListener("play", updateVideoButton);
+  video.addEventListener("pause", updateVideoButton);
+  video.addEventListener("ended", updateVideoButton);
+
+  updateVideoButton();
+}
 
 // EVENT FORM
 
@@ -86,44 +108,43 @@ const emailInput = document.querySelector("#event-email");
 const emailError = document.querySelector("#email-error");
 const formSuccess = document.querySelector(".form-success");
 
-// Use custom validation messages
-eventForm.noValidate = true;
+if (eventForm) {
+  eventForm.noValidate = true;
+  eventForm.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-// When the form is submitted
-eventForm.addEventListener("submit", (event) => {
-  event.preventDefault();
+    // Clear previous messages
+    emailError.textContent = "";
+    formSuccess.textContent = "";
+    emailInput.removeAttribute("aria-invalid");
 
-  // Clear previous messages
-  emailError.textContent = "";
-  formSuccess.textContent = "";
-  emailInput.removeAttribute("aria-invalid");
+    // Check if the email is valid
+    if (!emailInput.validity.valid) {
+      if (emailInput.validity.valueMissing) {
+        emailError.textContent = "Fyll i din e-postadress.";
+      } else {
+        emailError.textContent = "Ange en giltig e-postadress.";
+      }
 
-  // Check if the email is valid
-  if (!emailInput.validity.valid) {
-    if (emailInput.validity.valueMissing) {
-      emailError.textContent = "Fyll i din e-postadress.";
-    } else {
-      emailError.textContent = "Ange en giltig e-postadress.";
+      emailInput.setAttribute("aria-invalid", "true");
+      emailInput.focus();
+
+      return;
     }
 
-    emailInput.setAttribute("aria-invalid", "true");
-    emailInput.focus();
+    // Show confirmation message
+    formSuccess.textContent = "Tack! Din anmälan är mottagen.";
 
-    return;
-  }
+    // Clear the input
+    eventForm.reset();
+  });
 
-  // Show confirmation message
-  formSuccess.textContent = "Tack! Din anmälan är mottagen.";
-
-  // Clear the input
-  eventForm.reset();
-});
-
-// Clear error when the user starts typing
-emailInput.addEventListener("input", () => {
-  emailError.textContent = "";
-  emailInput.removeAttribute("aria-invalid");
-});
+  // Clear error when the user starts typing
+  emailInput.addEventListener("input", () => {
+    emailError.textContent = "";
+    emailInput.removeAttribute("aria-invalid");
+  });
+}
 
 // NEWSLETTER FORM
 

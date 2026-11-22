@@ -651,9 +651,10 @@ section h2 {
   cursor: pointer;
 }
 
-.video-toggle img {
-  width: 16px;
-  height: 16px;
+.video-toggle-icon {
+  display: block;
+  font-size: 18px;
+  line-height: 1;
 }
 
 /* CONTENT SECTION CARDS */
