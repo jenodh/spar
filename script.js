@@ -1,124 +1,80 @@
-// Product carousel
+// CAROUSEL FUNCTION
 
-const productCarousel = document.querySelector("#product-carousel");
+function setupCarousel(carouselId, sectionSelector, cardSelector) {
+  const carousel = document.querySelector(`#${carouselId}`);
 
-const productButtons = document.querySelectorAll(
-  ".product-section .carousel-controls button",
-);
+  if (!carousel) return;
 
-productButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const direction = Number(button.dataset.direction);
+  const buttons = document.querySelectorAll(
+    `${sectionSelector} .carousel-controls button`,
+  );
 
-    const productCard = productCarousel.querySelector(".product-card");
-    const cardWidth = productCard.offsetWidth;
+  // CAROUSEL CONTROLS
 
-    const gap = parseFloat(getComputedStyle(productCarousel).gap);
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const direction = Number(button.dataset.direction);
+      const card = carousel.querySelector(cardSelector);
 
-    productCarousel.scrollBy({
-      left: direction * (cardWidth + gap),
-      behavior: "smooth",
+      if (!card) return;
+
+      const cardWidth = card.offsetWidth;
+      const gap = parseFloat(getComputedStyle(carousel).gap) || 0;
+
+      const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+
+      const nextPosition = Math.max(
+        0,
+        Math.min(
+          carousel.scrollLeft + direction * (cardWidth + gap),
+          maxScroll,
+        ),
+      );
+
+      carousel.scrollTo({
+        left: nextPosition,
+        behavior: "smooth",
+      });
     });
   });
-});
 
-// Category carousel
+  // START POSITION - MOBILE
 
-const categoryCarousel = document.querySelector("#category-carousel");
+  if (window.matchMedia("(max-width: 1023px)").matches) {
+    const cards = carousel.querySelectorAll(cardSelector);
+    const secondCard = cards[1];
 
-const categoryButtons = document.querySelectorAll(
-  ".category-section .carousel-controls button",
-);
+    if (secondCard) {
+      carousel.scrollLeft =
+        secondCard.offsetLeft -
+        (carousel.clientWidth - secondCard.offsetWidth) / 2;
+    }
+  }
+}
 
-categoryButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const direction = Number(button.dataset.direction);
+// PRODUCT CAROUSEL
+setupCarousel("product-carousel", ".product-section", ".product-card");
 
-    const categoryCard = categoryCarousel.querySelector(".category-card");
-    const cardWidth = categoryCard.offsetWidth;
-
-    const gap = parseFloat(getComputedStyle(categoryCarousel).gap);
-
-    const maxScroll =
-      categoryCarousel.scrollWidth - categoryCarousel.clientWidth;
-
-    const nextPosition =
-      categoryCarousel.scrollLeft + direction * (cardWidth + gap);
-
-    categoryCarousel.scrollTo({
-      left: Math.max(0, Math.min(nextPosition, maxScroll)),
-      behavior: "smooth",
-    });
-  });
-});
+// CATEGORY CAROUSEL
+setupCarousel("category-carousel", ".category-section", ".category-card");
 
 // CONTENT CAROUSEL
+setupCarousel("content-carousel", ".content-cards", ".content-card");
 
-const contentCarousel = document.querySelector("#content-carousel");
-const contentButtons = document.querySelectorAll(
-  ".content-cards .carousel-controls button",
-);
+// GALLERY CAROUSEL
+setupCarousel("gallery-carousel", ".gallery-section", ".gallery-card");
 
-if (contentCarousel) {
-  contentButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const direction = Number(button.dataset.direction);
+// Toggle video playback (play/pause)
 
-      const card = contentCarousel.querySelector(".content-card");
-      const cardWidth = card.offsetWidth;
+const video = document.querySelector(".content-image video");
+const videoToggle = document.querySelector(".video-toggle");
 
-      const carouselStyle = getComputedStyle(contentCarousel);
-      const gap = parseFloat(carouselStyle.gap);
-
-      const scrollAmount = cardWidth + gap;
-
-      const maxScroll =
-        contentCarousel.scrollWidth - contentCarousel.clientWidth;
-
-      const nextPosition =
-        contentCarousel.scrollLeft + scrollAmount * direction;
-
-      const clampedPosition = Math.max(0, Math.min(nextPosition, maxScroll));
-
-      contentCarousel.scrollTo({
-        left: clampedPosition,
-        behavior: "smooth",
-      });
-    });
-  });
-}
-
-// Gallery Carousel
-
-const galleryCarousel = document.querySelector("#gallery-carousel");
-
-const galleryButtons = document.querySelectorAll(
-  ".gallery-section .carousel-controls button",
-);
-
-if (galleryCarousel) {
-  galleryButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const direction = Number(button.dataset.direction);
-
-      const galleryCard = galleryCarousel.querySelector(".gallery-card");
-      const cardWidth = galleryCard.offsetWidth;
-
-      const carouselWidth = galleryCarousel.clientWidth;
-
-      // Calculate gap based on four visible cards
-      const gap = (carouselWidth - cardWidth * 4) / 3;
-
-      const maxScroll =
-        galleryCarousel.scrollWidth - galleryCarousel.clientWidth;
-
-      const nextPosition =
-        galleryCarousel.scrollLeft + direction * (cardWidth + gap);
-
-      galleryCarousel.scrollTo({
-        left: Math.max(0, Math.min(nextPosition, maxScroll)),
-        behavior: "smooth",
-      });
-    });
-  });
-}
+videoToggle.addEventListener("click", () => {
+  if (video.paused) {
+    video.play();
+    videoToggle.setAttribute("aria-label", "Pausa video");
+  } else {
+    video.pause();
+    videoToggle.setAttribute("aria-label", "Spela upp video");
+  }
+});
