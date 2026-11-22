@@ -32,10 +32,10 @@
 
       <div class="main-header">
         <a href="index.html" class="logo">
-          <img src="assets/logos/Logo_navigation.png" alt="Spår" />
+          <img src="assets/logos/Logo_navigation.png" alt="Spår – startsida" />
         </a>
 
-        <nav class="desktop-nav">
+        <nav class="desktop-nav" aria-label="Huvudmeny">
           <a href="#">Kvinna</a>
           <a href="#">Man</a>
           <a href="#">Skor</a>
@@ -45,35 +45,38 @@
         <div class="desktop-tools">
           <form action="" class="desktop-search" role="search">
             <img src="assets/icons/search.svg" alt="" />
-            <input type="search" placeholder="Sök" />
+            <label for="site-search" class="visually-hidden">
+              Sök på webbplatsen
+            </label>
+            <input type="search" id="site-search" placeholder="Sök" />
           </form>
-          <button type="button">
+          <button type="button" aria-label="Mitt konto">
             <img src="assets/icons/person.svg" alt="" />
           </button>
-          <button type="button">
+          <button type="button" aria-label="Varukorg">
             <img src="assets/icons/local_mall.svg" alt="" />
           </button>
 
-          <div class="language-selector">
-            <a href="#" aria-current="page">sv</a>
+          <nav class="language-selector" aria-label="Välj språk">
+            <a href="#" aria-current="page" lang="sv">sv</a>
             <span>/</span>
-            <a href="#">en</a>
-          </div>
+            <a href="#" lang="en">en</a>
+          </nav>
         </div>
 
         <div class="mobile-actions">
           <div class="action-container">
-            <button type="button">
+            <button type="button" aria-label="Sök">
               <img src="assets/icons/search.svg" alt="" />
             </button>
           </div>
           <div class="action-container">
-            <button type="button">
+            <button type="button" aria-label="Varukorg">
               <img src="assets/icons/local_mall.svg" alt="" class="cart-icon" />
             </button>
           </div>
           <div class="action-container">
-            <button type="button">
+            <button type="button" aria-label="Öppna meny">
               <img src="assets/icons/dehaze.svg" alt="" class="menu-icon" />
             </button>
           </div>
@@ -106,8 +109,8 @@
             <h2>Upptäck kollektionen</h2>
           </div>
 
-          <div class="product-grid" id="product-carousel">
-            <article class="product-card">
+          <ul class="product-grid" id="product-carousel">
+            <li class="product-card">
               <a href="#" class="product-link">
                 <div class="product-image">
                   <img src="assets/images/products/jacka_fram_web.jpg" alt="" />
@@ -117,9 +120,9 @@
                   <p class="product-price">1499 kr</p>
                 </div>
               </a>
-            </article>
+            </li>
 
-            <article class="product-card">
+            <li class="product-card">
               <a href="#" class="product-link">
                 <div class="product-image">
                   <img
@@ -132,9 +135,9 @@
                   <p class="product-price">1499 kr</p>
                 </div>
               </a>
-            </article>
+            </li>
 
-            <article class="product-card">
+            <li class="product-card">
               <a href="#" class="product-link">
                 <div class="product-image">
                   <img src="assets/images/products/keps_sida_web.jpg" alt="" />
@@ -144,9 +147,9 @@
                   <p class="product-price">1499 kr</p>
                 </div>
               </a>
-            </article>
+            </li>
 
-            <article class="product-card">
+            <li class="product-card">
               <a href="#" class="product-link">
                 <div class="product-image">
                   <img
@@ -159,9 +162,9 @@
                   <p class="product-price">1499 kr</p>
                 </div>
               </a>
-            </article>
+            </li>
 
-            <article class="product-card">
+            <li class="product-card">
               <a href="#" class="product-link">
                 <div class="product-image">
                   <img src="assets/images/products/sko.web.jpg" alt="" />
@@ -171,9 +174,9 @@
                   <p class="product-price">1499 kr</p>
                 </div>
               </a>
-            </article>
+            </li>
 
-            <article class="product-card">
+            <li class="product-card">
               <a href="#" class="product-link">
                 <div class="product-image">
                   <img
@@ -186,9 +189,9 @@
                   <p class="product-price">1499 kr</p>
                 </div>
               </a>
-            </article>
+            </li>
 
-            <article class="product-card">
+            <li class="product-card">
               <a href="#" class="product-link">
                 <div class="product-image">
                   <img src="assets/images/products/nyckelring.web.jpg" alt="" />
@@ -198,9 +201,9 @@
                   <p class="product-price">1499 kr</p>
                 </div>
               </a>
-            </article>
+            </li>
 
-            <article class="product-card">
+            <li class="product-card">
               <a href="#" class="product-link">
                 <div class="product-image">
                   <img
@@ -213,8 +216,8 @@
                   <p class="product-price">1499 kr</p>
                 </div>
               </a>
-            </article>
-          </div>
+            </li>
+          </ul>
 
           <div class="carousel-controls">
             <button
@@ -242,24 +245,31 @@
           <p class="eyebrow">Säkra din plats</p>
           <h2>SPÅR x Attenborough</h2>
 
-          <p>
+          <p class="event-description">
             Event med föreläsare, workshops och exklusiva priser på SPÅR Limited
-            Edition. Begränsande platser.
+            Edition. Begränsat antal platser.
           </p>
 
           <form action="" class="event-form">
-            <label for="event-email" class="visually-hidden">
-              E-postadress
-            </label>
-            <input
-              type="email"
-              id="event-email"
-              name="email"
-              placeholder="name@mailadress.com"
-              required
-            />
+            <label for="event-email" class="visually-hidden"> E-post </label>
+
+            <div class="form-field">
+              <input
+                type="email"
+                id="event-email"
+                name="email"
+                placeholder="name@mailadress.com"
+                autocomplete="email"
+                aria-describedby="email-error"
+                required
+              />
+
+              <p id="email-error" class="form-error"></p>
+            </div>
+
             <button type="submit">Säkra min plats</button>
           </form>
+          <p class="form-success" role="status"></p>
         </div>
       </section>
 
@@ -268,31 +278,31 @@
         <div class="section-inner">
           <h2>Säsongens favoriter</h2>
 
-          <div class="category-carousel" id="category-carousel">
-            <article class="category-card">
+          <ul class="category-carousel" id="category-carousel">
+            <li class="category-card">
               <a href="#">
                 <div class="category-image">
-                  <h3>Category</h3>
+                  <h3>Kategori</h3>
                 </div>
               </a>
-            </article>
+            </li>
 
-            <article class="category-card">
+            <li class="category-card">
               <a href="#">
                 <div class="category-image">
-                  <h3>Category</h3>
+                  <h3>Kategori</h3>
                 </div>
               </a>
-            </article>
+            </li>
 
-            <article class="category-card">
+            <li class="category-card">
               <a href="#">
                 <div class="category-image">
-                  <h3>Category</h3>
+                  <h3>Kategori</h3>
                 </div>
               </a>
-            </article>
-          </div>
+            </li>
+          </ul>
 
           <div class="carousel-controls">
             <button
@@ -324,71 +334,82 @@
             <source src="assets/videos/teknisk_desktop.mp4" type="video/mp4" />
           </video>
 
-          <button class="video-toggle" aria-label="Pausa video">Ⅱ</button>
+          <button class="video-toggle" type="button" aria-label="Pausa video">
+            <span class="video-toggle-icon" aria-hidden="true">Ⅱ</span>
+          </button>
         </div>
       </section>
 
       <!-- CONTENT SECTION CARDS -->
       <section class="content-cards">
         <div class="section-inner">
-          <div class="content-carousel" id="content-carousel">
-            <article class="content-card">
-              <div class="content-card-image">
-                <img
-                  src="assets/images/campaigns/baaae0bcfec76819a386c32e745e96d98614ff01.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="content-card-info">
-                <h3>Rubrik</h3>
-                <p>
-                  Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-                  eu turpis molestie, dictum est a, mattis tellus. Sed
-                  dignissim, metus nec fringilla accumsan, risus sem
-                  sollicitudin lacus, ut interdum tellus elit sed risus.
-                  Maecenas eget condimentum velit, sit amet feugiat lectus.
-                </p>
-              </div>
-            </article>
+          <ul class="content-carousel" id="content-carousel">
+            <li class="content-card">
+              <article>
+                <div class="content-card-image">
+                  <img
+                    src="assets/images/campaigns/baaae0bcfec76819a386c32e745e96d98614ff01.jpg"
+                    alt=""
+                  />
+                </div>
 
-            <article class="content-card">
-              <div class="content-card-image">
-                <img
-                  src="assets/images/campaigns/b08bf978a73bb10842fb9be65a585a34f3d524c3.png"
-                  alt=""
-                />
-              </div>
-              <div class="content-card-info">
-                <h3>Rubrik</h3>
-                <p>
-                  Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-                  eu turpis molestie, dictum est a, mattis tellus. Sed
-                  dignissim, metus nec fringilla accumsan, risus sem
-                  sollicitudin lacus, ut interdum tellus elit sed risus.
-                  Maecenas eget condimentum velit, sit amet feugiat lectus.
-                </p>
-              </div>
-            </article>
+                <div class="content-card-info">
+                  <h3>Rubrik</h3>
+                  <p>
+                    Borem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Etiam eu turpis molestie, dictum est a, mattis tellus. Sed
+                    dignissim, metus nec fringilla accumsan, risus sem
+                    sollicitudin lacus, ut interdum tellus elit sed risus.
+                    Maecenas eget condimentum velit, sit amet feugiat lectus.
+                  </p>
+                </div>
+              </article>
+            </li>
 
-            <article class="content-card">
-              <div class="content-card-image">
-                <img
-                  src="assets/images/campaigns/080cff3750e4b8ba0349909e84faf3614f39c28a.png"
-                  alt=""
-                />
-              </div>
-              <div class="content-card-info">
-                <h3>Rubrik</h3>
-                <p>
-                  Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-                  eu turpis molestie, dictum est a, mattis tellus. Sed
-                  dignissim, metus nec fringilla accumsan, risus sem
-                  sollicitudin lacus, ut interdum tellus elit sed risus.
-                  Maecenas eget condimentum velit, sit amet feugiat lectus.
-                </p>
-              </div>
-            </article>
-          </div>
+            <li class="content-card">
+              <article>
+                <div class="content-card-image">
+                  <img
+                    src="assets/images/campaigns/b08bf978a73bb10842fb9be65a585a34f3d524c3.png"
+                    alt=""
+                  />
+                </div>
+
+                <div class="content-card-info">
+                  <h3>Rubrik</h3>
+                  <p>
+                    Borem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Etiam eu turpis molestie, dictum est a, mattis tellus. Sed
+                    dignissim, metus nec fringilla accumsan, risus sem
+                    sollicitudin lacus, ut interdum tellus elit sed risus.
+                    Maecenas eget condimentum velit, sit amet feugiat lectus.
+                  </p>
+                </div>
+              </article>
+            </li>
+
+            <li class="content-card">
+              <article>
+                <div class="content-card-image">
+                  <img
+                    src="assets/images/campaigns/080cff3750e4b8ba0349909e84faf3614f39c28a.png"
+                    alt=""
+                  />
+                </div>
+
+                <div class="content-card-info">
+                  <h3>Rubrik</h3>
+                  <p>
+                    Borem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Etiam eu turpis molestie, dictum est a, mattis tellus. Sed
+                    dignissim, metus nec fringilla accumsan, risus sem
+                    sollicitudin lacus, ut interdum tellus elit sed risus.
+                    Maecenas eget condimentum velit, sit amet feugiat lectus.
+                  </p>
+                </div>
+              </article>
+            </li>
+          </ul>
 
           <div class="carousel-controls">
             <button
@@ -421,7 +442,7 @@
             arbetsvillkor, skäliga löner och respekt för människorna bakom varje
             plagg.
           </p>
-          <br />
+
           <p>
             När ditt plagg är utslitet kan du komma in till workshop-hörnan som
             finns i alla våra butiker, alternativt skicka in det till oss för
@@ -444,78 +465,147 @@
         </div>
 
         <div class="gallery-carousel-wrapper">
-          <div class="gallery-carousel" id="gallery-carousel">
-            <article class="gallery-card">
-              <div class="gallery-image">
-                <img src="assets/images/campaigns/keps_community.jpeg" alt="" />
-              </div>
-              <div class="gallery-card-title">
-                <p>@username</p>
-                <img src="assets/icons/arrow_outward.svg" alt="" />
-              </div>
-            </article>
+          <ul class="gallery-carousel" id="gallery-carousel">
+            <li class="gallery-card">
+              <article>
+                <a
+                  href="/"
+                  aria-label="Visa inlägg från @username på Instagram"
+                >
+                  <div class="gallery-image">
+                    <img
+                      src="assets/images/campaigns/keps_community.jpeg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="gallery-card-title">
+                    <p>@username</p>
+                    <img src="assets/icons/arrow_outward.svg" alt="" />
+                  </div>
+                </a>
+              </article>
+            </li>
 
-            <article class="gallery-card">
-              <div class="gallery-image">
-                <img src="assets/images/campaigns/jacka_community.jpg" alt="" />
-              </div>
-              <div class="gallery-card-title">
-                <p>@username</p>
-                <img src="assets/icons/arrow_outward.svg" alt="" />
-              </div>
-            </article>
+            <li class="gallery-card">
+              <article>
+                <a
+                  href="/"
+                  aria-label="Visa inlägg från @username på Instagram"
+                >
+                  <div class="gallery-image">
+                    <img
+                      src="assets/images/campaigns/jacka_community.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="gallery-card-title">
+                    <p>@username</p>
+                    <img src="assets/icons/arrow_outward.svg" alt="" />
+                  </div>
+                </a>
+              </article>
+            </li>
 
-            <article class="gallery-card">
-              <div class="gallery-image">
-                <img
-                  src="assets/images/campaigns/glasögon_community.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="gallery-card-title">
-                <p>@username</p>
-                <img src="assets/icons/arrow_outward.svg" alt="" />
-              </div>
-            </article>
+            <li class="gallery-card">
+              <article>
+                <a
+                  href="/"
+                  aria-label="Visa inlägg från @username på Instagram"
+                >
+                  <div class="gallery-image">
+                    <img
+                      src="assets/images/campaigns/glasögon_community.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="gallery-card-title">
+                    <p>@username</p>
+                    <img src="assets/icons/arrow_outward.svg" alt="" />
+                  </div>
+                </a>
+              </article>
+            </li>
 
-            <article class="gallery-card">
-              <div class="gallery-image">
-                <img src="assets/images/campaigns/Rectangle 19.png" alt="" />
-              </div>
-              <div class="gallery-card-title">
-                <p>@username</p>
-                <img src="assets/icons/arrow_outward.svg" alt="" />
-              </div>
-            </article>
+            <li class="gallery-card">
+              <article>
+                <a
+                  href="/"
+                  aria-label="Visa inlägg från @username på Instagram"
+                >
+                  <div class="gallery-image">
+                    <img
+                      src="assets/images/campaigns/Rectangle 19.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="gallery-card-title">
+                    <p>@username</p>
+                    <img src="assets/icons/arrow_outward.svg" alt="" />
+                  </div>
+                </a>
+              </article>
+            </li>
 
-            <article class="gallery-card">
-              <div class="gallery-image">
-                <img src="assets/images/campaigns/Rectangle 19-3.png" alt="" />
-              </div>
-              <div class="gallery-card-title">
-                <p>@username</p>
-                <img src="assets/icons/arrow_outward.svg" alt="" />
-              </div>
-            </article>
-            <article class="gallery-card">
-              <div class="gallery-image">
-                <img src="assets/images/campaigns/Rectangle 19-2.png" alt="" />
-              </div>
-              <div class="gallery-card-title">
-                <p>@username</p>
-                <img src="assets/icons/arrow_outward.svg" alt="" />
-              </div>
-            </article>
-            <article class="gallery-card">
-              <div class="gallery-image">
-                <img src="assets/images/campaigns/Rectangle 19-1.png" alt="" />
-              </div>
-              <div class="gallery-card-title">
-                <p>@username</p>
-                <img src="assets/icons/arrow_outward.svg" alt="" />
-              </div>
-            </article>
-          </div>
+            <li class="gallery-card">
+              <article>
+                <a
+                  href="/"
+                  aria-label="Visa inlägg från @username på Instagram"
+                >
+                  <div class="gallery-image">
+                    <img
+                      src="assets/images/campaigns/Rectangle 19-3.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="gallery-card-title">
+                    <p>@username</p>
+                    <img src="assets/icons/arrow_outward.svg" alt="" />
+                  </div>
+                </a>
+              </article>
+            </li>
+
+            <li class="gallery-card">
+              <article>
+                <a
+                  href="/"
+                  aria-label="Visa inlägg från @username på Instagram"
+                >
+                  <div class="gallery-image">
+                    <img
+                      src="assets/images/campaigns/Rectangle 19-2.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="gallery-card-title">
+                    <p>@username</p>
+                    <img src="assets/icons/arrow_outward.svg" alt="" />
+                  </div>
+                </a>
+              </article>
+            </li>
+
+            <li class="gallery-card">
+              <article>
+                <a
+                  href="/"
+                  aria-label="Visa inlägg från @username på Instagram"
+                >
+                  <div class="gallery-image">
+                    <img
+                      src="assets/images/campaigns/Rectangle 19-1.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="gallery-card-title">
+                    <p>@username</p>
+                    <img src="assets/icons/arrow_outward.svg" alt="" />
+                  </div>
+                </a>
+              </article>
+            </li>
+          </ul>
 
           <div class="carousel-controls">
             <button
@@ -534,31 +624,43 @@
       </section>
 
       <!-- NEWSLETTER SECTION -->
+
+      <!-- NEWSLETTER SECTION -->
       <section class="newsletter-section">
         <div class="section-inner">
           <h2>Bli en del av vårt community</h2>
-          <p>
+
+          <p id="newsletter-description">
             Oroa dig inte, vi gillar inte heller spam. Vi kommer bara skicka
             e-mail för exklusiva events och förmåner.
           </p>
 
-          <form class="newsletter-form">
-            <label for="newsletter-email" class="visually-hidden">
-              E-postadress
-            </label>
+          <div class="newsletter-form-wrapper">
+            <form class="newsletter-form">
+              <div class="form-field">
+                <label for="newsletter-email" class="visually-hidden">
+                  E-post
+                </label>
 
-            <input
-              type="email"
-              id="newsletter-email"
-              name="email"
-              placeholder="name@mailadress.com"
-              required
-            />
+                <input
+                  type="email"
+                  id="newsletter-email"
+                  name="email"
+                  placeholder="name@mailadress.com"
+                  autocomplete="email"
+                  aria-describedby="newsletter-description newsletter-error newsletter-disclaimer"
+                  required
+                />
 
-            <button type="submit">Gå med</button>
-          </form>
+                <p id="newsletter-error" class="form-error"></p>
+              </div>
 
-          <p class="form-disclaimer">
+              <button type="submit">Gå med</button>
+            </form>
+            <p class="form-success" role="status"></p>
+          </div>
+
+          <p id="newsletter-disclaimer" class="form-disclaimer">
             Du kan alltid avregistrera om du ändrar dig!
           </p>
         </div>
@@ -572,7 +674,7 @@
       /></a>
 
       <div class="footer-content">
-        <nav class="footer-column">
+        <nav class="footer-column" aria-label="Hjälp">
           <h2>Hjälp</h2>
           <ul>
             <li><a href="#">Kundservice</a></li>
@@ -582,7 +684,7 @@
           </ul>
         </nav>
 
-        <nav class="footer-column">
+        <nav class="footer-column" aria-label="Värdegrunder">
           <h2>Värdegrunder</h2>
           <ul>
             <li><a href="#">Hållbarhet</a></li>
@@ -591,7 +693,7 @@
           </ul>
         </nav>
 
-        <nav class="footer-column">
+        <nav class="footer-column" aria-label="Om oss">
           <h2>Om oss</h2>
           <ul>
             <li><a href="#">Vilka vi är</a></li>
@@ -603,9 +705,15 @@
       </div>
 
       <div class="social-links">
-        <a href="#"><img src="assets/icons/instagram.svg" alt="" /></a>
-        <a href="#"><img src="assets/icons/facebook.svg" alt="" /></a>
-        <a href="#"><img src="assets/icons/linkedin.svg" alt="" /></a>
+        <a href="#" aria-label="SPÅR på Instagram"
+          ><img src="assets/icons/instagram.svg" alt=""
+        /></a>
+        <a href="#" aria-label="SPÅR på Facebook"
+          ><img src="assets/icons/facebook.svg" alt=""
+        /></a>
+        <a href="#" aria-label="SPÅR på LinkedIn"
+          ><img src="assets/icons/linkedin.svg" alt=""
+        /></a>
       </div>
     </footer>
   </body>

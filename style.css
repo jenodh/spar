@@ -20,6 +20,7 @@
   --neongreen-500: #0ef152;
 
   /* Brand */
+  --teal-600: #18333a;
   --teal-900: #142226;
 
   /* Neutral */
@@ -143,6 +144,14 @@ h2,
 h3,
 p {
   margin: 0;
+}
+
+/* ACCESSIBILITY – FOCUS */
+
+:focus-visible {
+  border-radius: var(--radius-base);
+  outline: 4px solid var(--neongreen-400);
+  outline-offset: 2px;
 }
 
 /* GENERAL LAYOUT */
@@ -327,7 +336,8 @@ section h2 {
   overflow-y: hidden;
   width: calc(100% + 32px);
   margin-inline: -16px;
-  padding-inline: var(--spacing-base);
+  padding: 6px var(--spacing-base);
+  list-style: none;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   scrollbar-width: none;
@@ -452,6 +462,48 @@ section h2 {
   white-space: nowrap;
 }
 
+/* FORM MESSAGES */
+
+.form-error,
+.form-success {
+  color: var(--neutral-1);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-base);
+  text-align: left;
+  margin: 8px 0 0;
+}
+
+.form-error:empty,
+.form-success:empty {
+  display: none;
+}
+
+/* FORM FIELD */
+
+.event-form .form-field {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.event-form .form-field input {
+  width: 100%;
+  height: 44px;
+  flex: none;
+}
+
+.event-form .form-field .form-error {
+  width: 100%;
+  margin-top: 8px;
+  font-size: var(--font-size-sm);
+}
+
+.event-form button {
+  align-self: flex-start;
+  min-height: 44px;
+}
+
 /* EVENT SECTION */
 
 .event-section {
@@ -470,6 +522,7 @@ section h2 {
   font-weight: var(--font-weight-medium);
   line-height: var(--line-height-2xs);
   letter-spacing: var(--letter-spacing-10);
+  color: var(--neutral-1);
   text-transform: uppercase;
   margin-bottom: var(--spacing-base);
 }
@@ -483,7 +536,7 @@ section h2 {
   margin-bottom: 46px;
 }
 
-.event-content p {
+.event-content .event-description {
   font-size: var(--font-size-base);
   color: var(--neutral-1);
   line-height: var(--line-height-base);
@@ -512,6 +565,8 @@ section h2 {
   width: calc(100% + 32px);
   margin-inline: -16px;
   padding-inline: var(--spacing-base);
+  list-style: none;
+  padding-block: 0;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   scrollbar-width: none;
@@ -522,6 +577,10 @@ section h2 {
   flex: 0 0 254px;
   min-width: 0;
   scroll-snap-align: center;
+}
+
+.category-card a {
+  display: block;
 }
 
 .category-image {
@@ -541,6 +600,7 @@ section h2 {
   font-weight: var(--font-weight-medium);
   line-height: var(--line-height-1);
   color: var(--neutral-1);
+  text-transform: uppercase;
 }
 
 /* CONTENT SECTION */
@@ -591,9 +651,10 @@ section h2 {
   cursor: pointer;
 }
 
-.video-toggle img {
-  width: 16px;
-  height: 16px;
+.video-toggle-icon {
+  display: block;
+  font-size: 18px;
+  line-height: 1;
 }
 
 /* CONTENT SECTION CARDS */
@@ -606,13 +667,16 @@ section h2 {
   width: calc(100% + 32px);
   margin-inline: -16px;
   padding-inline: var(--spacing-base);
+  list-style: none;
+  margin-block: 0;
+  padding-block: 0;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
 }
 
-.content-card {
+.content-card article {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -674,6 +738,10 @@ section h2 {
   line-height: var(--line-height-base);
 }
 
+.split-content p + p {
+  margin-top: var(--spacing-lg);
+}
+
 .split-image {
   width: 100%;
   height: 390px;
@@ -703,7 +771,8 @@ section h2 {
   overflow-y: hidden;
   width: calc(100% + 32px);
   margin-inline: -16px;
-  padding-inline: var(--spacing-base);
+  padding: 6px var(--spacing-base);
+  list-style: none;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   scrollbar-width: none;
@@ -714,6 +783,14 @@ section h2 {
   flex: 0 0 171px;
   min-width: 0;
   scroll-snap-align: center;
+}
+
+.gallery-card article {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: inherit;
+  text-decoration: none;
 }
 
 .gallery-image {
@@ -784,6 +861,52 @@ section h2 {
 .form-disclaimer {
   font-size: var(--font-size-base);
   margin-top: var(--spacing-base);
+}
+
+/* NEWSLETTER FORM */
+
+.newsletter-form {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.newsletter-form .form-field {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.newsletter-form .form-field input {
+  width: 100%;
+  height: 44px;
+  flex: none;
+}
+
+.newsletter-form .form-field .form-error {
+  color: var(--neutral-900);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-base);
+  text-align: left;
+  margin: 8px 0 0;
+}
+
+.newsletter-form button {
+  align-self: flex-start;
+  min-height: 44px;
+}
+
+.newsletter-section .form-success {
+  color: var(--neutral-900);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-base);
+  margin-top: var(--spacing-sm);
+}
+
+.newsletter-form .form-error:empty,
+.newsletter-section .form-success:empty {
+  display: none;
 }
 
 /* FOOTER */
@@ -1068,7 +1191,7 @@ section h2 {
     margin-bottom: 73px;
   }
 
-  .event-content p {
+  .event-content .event-description {
     font-size: var(--font-size-lg);
     margin-bottom: 73px;
   }
@@ -1080,6 +1203,11 @@ section h2 {
 
   .event-form input {
     flex: 1;
+  }
+
+  .event-content .form-success {
+    max-width: 358px;
+    margin: 8px auto 0;
   }
 
   /* CATEGORY SECTION */
@@ -1141,6 +1269,14 @@ section h2 {
   .content-card {
     flex: 0 0 318px;
     scroll-snap-align: none;
+  }
+
+  .content-card article {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-base);
+    width: 100%;
   }
 
   .content-card-image {
@@ -1256,6 +1392,27 @@ section h2 {
     margin-bottom: 0;
   }
 
+  .newsletter-form-wrapper {
+    width: 100%;
+    max-width: 358px;
+    margin: var(--spacing-base) auto 0;
+  }
+
+  .newsletter-form {
+    width: 100%;
+    max-width: none;
+    justify-content: center;
+    flex-wrap: nowrap;
+    margin: 0;
+    gap: 0;
+  }
+
+  .newsletter-section .form-success {
+    width: 100%;
+    text-align: left;
+    margin: var(--spacing-sm) 0 0;
+  }
+
   /* FOOTER */
 
   .site-footer {
@@ -1298,9 +1455,17 @@ section h2 {
     margin-top: 0;
   }
 
+  .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    min-height: 24px;
+  }
+
   .social-links img {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
   }
 }
 
