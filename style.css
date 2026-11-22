@@ -336,10 +336,8 @@ section h2 {
   overflow-y: hidden;
   width: calc(100% + 32px);
   margin-inline: -16px;
-  padding-inline: var(--spacing-base);
+  padding: 6px var(--spacing-base);
   list-style: none;
-  padding: 0;
-  margin: 0;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   scrollbar-width: none;
@@ -772,9 +770,8 @@ section h2 {
   overflow-y: hidden;
   width: calc(100% + 32px);
   margin-inline: -16px;
-  padding-inline: var(--spacing-base);
+  padding: 6px var(--spacing-base);
   list-style: none;
-  padding-block: 0;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   scrollbar-width: none;
