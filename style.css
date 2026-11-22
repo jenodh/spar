@@ -20,6 +20,7 @@
   --neongreen-500: #0ef152;
 
   /* Brand */
+  --teal-600: #18333a;
   --teal-900: #142226;
 
   /* Neutral */
@@ -143,6 +144,14 @@ h2,
 h3,
 p {
   margin: 0;
+}
+
+/* ACCESSIBILITY – FOCUS */
+
+:focus-visible {
+  border-radius: var(--radius-base);
+  outline: 4px solid var(--neongreen-400);
+  outline-offset: 2px;
 }
 
 /* GENERAL LAYOUT */
@@ -782,6 +791,8 @@ section h2 {
   display: flex;
   flex-direction: column;
   width: 100%;
+  color: inherit;
+  text-decoration: none;
 }
 
 .gallery-image {
