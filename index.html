@@ -584,31 +584,43 @@
       </section>
 
       <!-- NEWSLETTER SECTION -->
+
+      <!-- NEWSLETTER SECTION -->
       <section class="newsletter-section">
         <div class="section-inner">
           <h2>Bli en del av vårt community</h2>
-          <p>
+
+          <p id="newsletter-description">
             Oroa dig inte, vi gillar inte heller spam. Vi kommer bara skicka
             e-mail för exklusiva events och förmåner.
           </p>
 
-          <form class="newsletter-form">
-            <label for="newsletter-email" class="visually-hidden">
-              E-postadress
-            </label>
+          <div class="newsletter-form-wrapper">
+            <form class="newsletter-form">
+              <div class="form-field">
+                <label for="newsletter-email" class="visually-hidden">
+                  E-post
+                </label>
 
-            <input
-              type="email"
-              id="newsletter-email"
-              name="email"
-              placeholder="name@mailadress.com"
-              required
-            />
+                <input
+                  type="email"
+                  id="newsletter-email"
+                  name="email"
+                  placeholder="name@mailadress.com"
+                  autocomplete="email"
+                  aria-describedby="newsletter-description newsletter-error newsletter-disclaimer"
+                  required
+                />
 
-            <button type="submit">Gå med</button>
-          </form>
+                <p id="newsletter-error" class="form-error"></p>
+              </div>
 
-          <p class="form-disclaimer">
+              <button type="submit">Gå med</button>
+            </form>
+            <p class="form-success" role="status"></p>
+          </div>
+
+          <p id="newsletter-disclaimer" class="form-disclaimer">
             Du kan alltid avregistrera om du ändrar dig!
           </p>
         </div>

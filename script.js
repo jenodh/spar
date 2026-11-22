@@ -124,3 +124,46 @@ emailInput.addEventListener("input", () => {
   emailError.textContent = "";
   emailInput.removeAttribute("aria-invalid");
 });
+
+// NEWSLETTER FORM
+
+const newsletterForm = document.querySelector(".newsletter-form");
+const newsletterInput = document.querySelector("#newsletter-email");
+const newsletterError = document.querySelector("#newsletter-error");
+const newsletterSuccess = document.querySelector(
+  ".newsletter-section .form-success",
+);
+
+if (newsletterForm) {
+  newsletterForm.noValidate = true;
+
+  newsletterForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    newsletterError.textContent = "";
+    newsletterSuccess.textContent = "";
+    newsletterInput.removeAttribute("aria-invalid");
+
+    if (!newsletterInput.validity.valid) {
+      if (newsletterInput.validity.valueMissing) {
+        newsletterError.textContent = "Fyll i din e-postadress.";
+      } else {
+        newsletterError.textContent = "Ange en giltig e-postadress.";
+      }
+
+      newsletterInput.setAttribute("aria-invalid", "true");
+      newsletterInput.focus();
+      return;
+    }
+
+    newsletterSuccess.textContent =
+      "Tack! Du är nu anmäld till vårt nyhetsbrev.";
+
+    newsletterForm.reset();
+  });
+
+  newsletterInput.addEventListener("input", () => {
+    newsletterError.textContent = "";
+    newsletterInput.removeAttribute("aria-invalid");
+  });
+}
