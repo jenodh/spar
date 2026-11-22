@@ -455,6 +455,48 @@ section h2 {
   white-space: nowrap;
 }
 
+/* FORM MESSAGES */
+
+.form-error,
+.form-success {
+  color: var(--neutral-1);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-base);
+  text-align: left;
+  margin: 8px 0 0;
+}
+
+.form-error:empty,
+.form-success:empty {
+  display: none;
+}
+
+/* FORM FIELD */
+
+.event-form .form-field {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.event-form .form-field input {
+  width: 100%;
+  height: 44px;
+  flex: none;
+}
+
+.event-form .form-field .form-error {
+  width: 100%;
+  margin-top: 8px;
+  font-size: var(--font-size-sm);
+}
+
+.event-form button {
+  align-self: flex-start;
+  min-height: 44px;
+}
+
 /* EVENT SECTION */
 
 .event-section {
@@ -473,6 +515,7 @@ section h2 {
   font-weight: var(--font-weight-medium);
   line-height: var(--line-height-2xs);
   letter-spacing: var(--letter-spacing-10);
+  color: var(--neutral-1);
   text-transform: uppercase;
   margin-bottom: var(--spacing-base);
 }
@@ -486,7 +529,7 @@ section h2 {
   margin-bottom: 46px;
 }
 
-.event-content p {
+.event-content .event-description {
   font-size: var(--font-size-base);
   color: var(--neutral-1);
   line-height: var(--line-height-base);
@@ -1071,7 +1114,7 @@ section h2 {
     margin-bottom: 73px;
   }
 
-  .event-content p {
+  .event-content .event-description {
     font-size: var(--font-size-lg);
     margin-bottom: 73px;
   }
@@ -1083,6 +1126,11 @@ section h2 {
 
   .event-form input {
     flex: 1;
+  }
+
+  .event-content .form-success {
+    max-width: 358px;
+    margin: 8px auto 0;
   }
 
   /* CATEGORY SECTION */

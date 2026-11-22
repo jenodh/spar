@@ -78,3 +78,49 @@ videoToggle.addEventListener("click", () => {
     videoToggle.setAttribute("aria-label", "Spela upp video");
   }
 });
+
+// EVENT FORM
+
+const eventForm = document.querySelector(".event-form");
+const emailInput = document.querySelector("#event-email");
+const emailError = document.querySelector("#email-error");
+const formSuccess = document.querySelector(".form-success");
+
+// Use custom validation messages
+eventForm.noValidate = true;
+
+// When the form is submitted
+eventForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  // Clear previous messages
+  emailError.textContent = "";
+  formSuccess.textContent = "";
+  emailInput.removeAttribute("aria-invalid");
+
+  // Check if the email is valid
+  if (!emailInput.validity.valid) {
+    if (emailInput.validity.valueMissing) {
+      emailError.textContent = "Fyll i din e-postadress.";
+    } else {
+      emailError.textContent = "Ange en giltig e-postadress.";
+    }
+
+    emailInput.setAttribute("aria-invalid", "true");
+    emailInput.focus();
+
+    return;
+  }
+
+  // Show confirmation message
+  formSuccess.textContent = "Tack! Din anmälan är mottagen.";
+
+  // Clear the input
+  eventForm.reset();
+});
+
+// Clear error when the user starts typing
+emailInput.addEventListener("input", () => {
+  emailError.textContent = "";
+  emailInput.removeAttribute("aria-invalid");
+});
