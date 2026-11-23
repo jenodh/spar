@@ -1291,7 +1291,8 @@ section h2 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: var(--font-size-xl);
+    font-size: 40px;
+    line-height: var(--line-height-base);
     text-align: center;
   }
 
