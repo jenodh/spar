@@ -624,7 +624,7 @@ section h2 {
 .content-image {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 390 / 500;
   overflow: hidden;
 }
 
@@ -1251,6 +1251,7 @@ section h2 {
   /* CONTENT SECTION */
 
   .content-image {
+    aspect-ratio: 16 / 9;
     height: 700px;
   }
 
