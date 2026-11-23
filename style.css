@@ -18,6 +18,7 @@
   --neongreen-200: #9ff9ba;
   --neongreen-400: #3ff374;
   --neongreen-500: #0ef152;
+  --neongreen-700: #099031;
 
   /* Brand */
   --teal-600: #18333a;
@@ -150,7 +151,7 @@ p {
 
 :focus-visible {
   border-radius: var(--radius-base);
-  outline: 4px solid var(--teal-600);
+  outline: 4px solid var(--neongreen-700);
   outline-offset: 2px;
 }
 
