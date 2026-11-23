@@ -398,11 +398,11 @@ section h2 {
 }
 
 .product-image {
+  position: relative;
   width: 171px;
   height: 228px;
   overflow: hidden;
   margin-bottom: var(--spacing-sm);
-  background-color: #a1a0a0;
 }
 
 .product-image img {
@@ -411,6 +411,13 @@ section h2 {
   height: 100%;
   object-fit: cover;
   object-position: center center;
+}
+
+.product-image-hover {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
 
 .product-info {
@@ -1558,6 +1565,10 @@ section h2 {
   .event-form button:active,
   .newsletter-form button:active {
     background-color: var(--neongreen-700);
+  }
+
+  .product-card:hover .product-image-hover {
+    opacity: 1;
   }
 }
 
