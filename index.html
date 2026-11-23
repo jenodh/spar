@@ -50,12 +50,14 @@
             </label>
             <input type="search" id="site-search" placeholder="Sök" />
           </form>
-          <button type="button" aria-label="Mitt konto">
-            <img src="assets/icons/person.svg" alt="" />
-          </button>
-          <button type="button" aria-label="Varukorg">
-            <img src="assets/icons/local_mall.svg" alt="" />
-          </button>
+
+          <a href="/" class="action-container" aria-label="Mitt konto">
+            <img class="account-icon" src="assets/icons/person.svg" alt="" />
+          </a>
+
+          <a href="/" class="action-container" aria-label="Varukorg">
+            <img class="cart-icon" src="assets/icons/local_mall.svg" alt="" />
+          </a>
 
           <nav class="language-selector" aria-label="Välj språk">
             <a href="#" aria-current="page" lang="sv">sv</a>
@@ -65,21 +67,21 @@
         </div>
 
         <div class="mobile-actions">
-          <div class="action-container">
-            <button type="button" aria-label="Sök">
-              <img src="assets/icons/search.svg" alt="" />
-            </button>
-          </div>
-          <div class="action-container">
-            <button type="button" aria-label="Varukorg">
-              <img src="assets/icons/local_mall.svg" alt="" class="cart-icon" />
-            </button>
-          </div>
-          <div class="action-container">
-            <button type="button" aria-label="Öppna meny">
-              <img src="assets/icons/dehaze.svg" alt="" class="menu-icon" />
-            </button>
-          </div>
+          <a href="/" class="action-container" aria-label="Sök">
+            <img class="search-icon" src="assets/icons/search.svg" alt="" />
+          </a>
+
+          <a href="/" class="action-container" aria-label="Varukorg">
+            <img class="cart-icon" src="assets/icons/local_mall.svg" alt="" />
+          </a>
+
+          <button
+            class="action-container"
+            type="button"
+            aria-label="Öppna meny"
+          >
+            <img class="menu-icon" src="assets/icons/dehaze.svg" alt="" />
+          </button>
         </div>
       </div>
     </header>
