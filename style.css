@@ -18,6 +18,7 @@
   --neongreen-200: #9ff9ba;
   --neongreen-400: #3ff374;
   --neongreen-500: #0ef152;
+  --neongreen-600: #0cc041;
   --neongreen-700: #099031;
 
   /* Brand */
@@ -349,6 +350,17 @@ section h2 {
   font-size: var(--font-size-base);
   line-height: var(--line-height-sm);
   color: var(--neutral-1);
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    backdrop-filter 0.2s ease;
+}
+
+.button:active {
+  border-color: var(--neongreen-500);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12.5px);
+  -webkit-backdrop-filter: blur(12.5px);
 }
 
 /* PRODUCT SECTION */
@@ -437,6 +449,10 @@ section h2 {
   border-radius: var(--radius-round);
   background-color: transparent;
   padding: var(--spacing-sm);
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    backdrop-filter 0.2s ease;
 }
 
 .carousel-controls button img {
@@ -484,6 +500,12 @@ section h2 {
   font-weight: var(--font-weight-medium);
   line-height: var(--line-height-sm);
   white-space: nowrap;
+  transition: background-color 0.2s ease;
+}
+
+.event-form button:active,
+.newsletter-form button:active {
+  background-color: var(--neongreen-700);
 }
 
 /* FORM MESSAGES */
@@ -1393,6 +1415,7 @@ section h2 {
 
   .gallery-section .carousel-controls button {
     background-color: var(--neongreen-100);
+    border: none;
     pointer-events: auto;
   }
 
@@ -1502,6 +1525,39 @@ section h2 {
   .social-links img {
     width: 24px;
     height: 24px;
+  }
+}
+
+/* HOVER STATES */
+
+@media (hover: hover) {
+  .button:hover {
+    border-color: var(--neutral-1);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12.5px);
+    -webkit-backdrop-filter: blur(12.5px);
+  }
+
+  .button:active {
+    border-color: var(--neongreen-500);
+  }
+
+  .carousel-controls button:hover {
+    background-color: rgba(116, 133, 137, 0.5);
+  }
+
+  .gallery-section .carousel-controls button:hover {
+    background-color: var(--neongreen-200);
+  }
+
+  .event-form button:hover,
+  .newsletter-form button:hover {
+    background-color: var(--neongreen-600);
+  }
+
+  .event-form button:active,
+  .newsletter-form button:active {
+    background-color: var(--neongreen-700);
   }
 }
 
