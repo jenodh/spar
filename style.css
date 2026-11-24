@@ -1434,8 +1434,8 @@ section h2 {
   /* GALLERY SECTION */
 
   .gallery-carousel {
-    justify-content: flex-start;
-    gap: max(0px, calc((100vw - 1272px) / 3));
+    justify-content: space-between;
+    gap: var(--spacing-3xl);
     width: 100%;
     margin-inline: 0;
     padding-inline: 0;
