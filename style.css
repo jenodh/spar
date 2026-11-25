@@ -969,7 +969,7 @@ section h2 {
 }
 
 .newsletter-form button {
-  margin-top: 32px;
+  margin-top: 36px;
 }
 
 .newsletter-form .form-field .form-error {
@@ -978,6 +978,11 @@ section h2 {
   line-height: var(--line-height-base);
   text-align: left;
   margin: 8px 0 0;
+}
+
+.newsletter-section .form-success {
+  color: var(--neutral-900);
+  font-size: var(--font-size-sm);
 }
 
 /* FOOTER */
@@ -1496,7 +1501,7 @@ section h2 {
   }
 
   .newsletter-section .form-disclaimer {
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-sm);
     margin-top: var(--spacing-base);
     margin-bottom: 0;
   }
