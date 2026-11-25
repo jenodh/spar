@@ -1348,7 +1348,11 @@ section h2 {
   }
 
   .video-content h2 {
-    font-size: var(--font-size-2xl);
+    font-family: var(--font-secondary);
+    font-size: 64px;
+    line-height: var(--line-height-xs);
+    margin-bottom: var(--spacing-md);
+    color: var(--neongreen-400);
   }
 
   .video-content p {
