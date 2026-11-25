@@ -53,7 +53,7 @@
   --font-size-4xl: calc(45rem / 16);
   --font-size-6xl: calc(90rem / 16);
 
-  /* FONT WEIGHTS */
+  /* Font weight */
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
@@ -586,7 +586,7 @@ section h2 {
 
 .event-content .eyebrow {
   font-weight: var(--font-weight-medium);
-  line-height: var(--line-height-2xs);
+  line-height: var(--line-height-sm);
   letter-spacing: var(--letter-spacing-10);
   color: var(--neutral-1);
   text-transform: uppercase;
@@ -1269,13 +1269,14 @@ section h2 {
   .event-content .eyebrow {
     font-size: var(--font-size-lg);
     line-height: var(--line-height-xs);
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
   }
 
   .event-content h2 {
     font-size: var(--font-size-6xl);
     line-height: var(--line-height-3xs);
     margin-bottom: 73px;
+    margin-top: var(--spacing-lg);
   }
 
   .event-content .event-description {
