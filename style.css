@@ -1202,7 +1202,7 @@ section h2 {
   /* HERO */
 
   .hero {
-    height: 700px;
+    height: clamp(700px, 42vw, 800px);
     align-items: flex-end;
   }
 
