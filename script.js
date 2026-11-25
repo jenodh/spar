@@ -64,41 +64,69 @@ setupCarousel("content-carousel", ".content-cards", ".content-card");
 // GALLERY CAROUSEL
 setupCarousel("gallery-carousel", ".gallery-section", ".gallery-card");
 
-// VIDEO TOGGLE (PLAY/PAUSE)
+// VIDEO - RESPONSIVE SOURCE + PLAY/PAUSE
 
 const video = document.querySelector(".content-image video");
 const videoToggle = document.querySelector(".video-toggle");
 const videoIcon = document.querySelector(".video-toggle-icon");
 
-if (video && videoToggle && videoIcon) {
-  function updateVideoButton() {
-    const isPlaying = !video.paused && !video.ended;
+if (video) {
+  const mobileVideo = "assets/videos/teknisk_mobil.mp4";
+  const desktopVideo = "assets/videos/teknisk_desktop.mp4";
 
-    videoToggle.setAttribute(
-      "aria-label",
-      isPlaying ? "Pausa video" : "Spela upp video",
-    );
+  const mediaQuery = window.matchMedia("(max-width: 767px)");
 
-    videoIcon.textContent = isPlaying ? "Ⅱ" : "⏵";
+  // CHANGE VIDEO SOURCE
+
+  function updateVideoSource() {
+    const newSource = mediaQuery.matches ? mobileVideo : desktopVideo;
+
+    if (video.getAttribute("src") !== newSource) {
+      video.src = newSource;
+      video.load();
+
+      video.play().catch(() => {
+        updateVideoButton();
+      });
+    }
   }
 
-  videoToggle.addEventListener("click", async () => {
-    if (video.paused) {
-      try {
-        await video.play();
-      } catch (error) {
-        updateVideoButton();
-      }
-    } else {
-      video.pause();
+  updateVideoSource();
+
+  mediaQuery.addEventListener("change", updateVideoSource);
+
+  // PLAY / PAUSE BUTTON
+
+  if (videoToggle && videoIcon) {
+    function updateVideoButton() {
+      const isPlaying = !video.paused && !video.ended;
+
+      videoToggle.setAttribute(
+        "aria-label",
+        isPlaying ? "Pausa video" : "Spela upp video",
+      );
+
+      videoIcon.textContent = isPlaying ? "Ⅱ" : "⏵";
     }
-  });
 
-  video.addEventListener("play", updateVideoButton);
-  video.addEventListener("pause", updateVideoButton);
-  video.addEventListener("ended", updateVideoButton);
+    videoToggle.addEventListener("click", async () => {
+      if (video.paused) {
+        try {
+          await video.play();
+        } catch (error) {
+          updateVideoButton();
+        }
+      } else {
+        video.pause();
+      }
+    });
 
-  updateVideoButton();
+    video.addEventListener("play", updateVideoButton);
+    video.addEventListener("pause", updateVideoButton);
+    video.addEventListener("ended", updateVideoButton);
+
+    updateVideoButton();
+  }
 }
 
 // EVENT FORM

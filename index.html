@@ -3,7 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Spår</title>
+    <title>Spår - Vinterkollektion</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/icons/Spår_favicon_teal_32x32px.png"
+    />
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -50,12 +55,14 @@
             </label>
             <input type="search" id="site-search" placeholder="Sök" />
           </form>
-          <button type="button" aria-label="Mitt konto">
-            <img src="assets/icons/person.svg" alt="" />
-          </button>
-          <button type="button" aria-label="Varukorg">
-            <img src="assets/icons/local_mall.svg" alt="" />
-          </button>
+
+          <a href="#" class="action-container" aria-label="Mitt konto">
+            <img class="account-icon" src="assets/icons/person.svg" alt="" />
+          </a>
+
+          <a href="#" class="action-container" aria-label="Varukorg">
+            <img class="cart-icon" src="assets/icons/local_mall.svg" alt="" />
+          </a>
 
           <nav class="language-selector" aria-label="Välj språk">
             <a href="#" aria-current="page" lang="sv">sv</a>
@@ -65,21 +72,21 @@
         </div>
 
         <div class="mobile-actions">
-          <div class="action-container">
-            <button type="button" aria-label="Sök">
-              <img src="assets/icons/search.svg" alt="" />
-            </button>
-          </div>
-          <div class="action-container">
-            <button type="button" aria-label="Varukorg">
-              <img src="assets/icons/local_mall.svg" alt="" class="cart-icon" />
-            </button>
-          </div>
-          <div class="action-container">
-            <button type="button" aria-label="Öppna meny">
-              <img src="assets/icons/dehaze.svg" alt="" class="menu-icon" />
-            </button>
-          </div>
+          <a href="/" class="action-container" aria-label="Sök">
+            <img class="search-icon" src="assets/icons/search.svg" alt="" />
+          </a>
+
+          <a href="/" class="action-container" aria-label="Varukorg">
+            <img class="cart-icon" src="assets/icons/local_mall.svg" alt="" />
+          </a>
+
+          <button
+            class="action-container"
+            type="button"
+            aria-label="Öppna meny"
+          >
+            <img class="menu-icon" src="assets/icons/dehaze.svg" alt="" />
+          </button>
         </div>
       </div>
     </header>
@@ -90,8 +97,8 @@
       <section class="hero">
         <div class="hero-image">
           <img
-            src="assets/images/campaigns/e6423862eeb2ff002053e2f8de8bad8627f8a58b.jpg"
-            alt=""
+            src="assets/images/campaigns/hero_spar.jpg"
+            alt="person i svart huvjacka och svarta shorts som springer uppför en klippa i mörker, med lysande reflexdetaljer på ärmarna"
           />
         </div>
 
@@ -113,11 +120,62 @@
             <li class="product-card">
               <a href="#" class="product-link">
                 <div class="product-image">
-                  <img src="assets/images/products/jacka_fram_web.jpg" alt="" />
+                  <img
+                    src="assets/images/products/sko_sida_web.jpg"
+                    alt="grön sko sedd från sidan, med vita skosnören, svart sula och vit SPÅR-logotyp vid hälens"
+                    class="product-image-main"
+                  />
+                  <img
+                    src="assets/images/products/sko_bak_web.jpg"
+                    alt="grön sko sedd snett bakifrån, med svart sula, vit SPÅR-logotyp och en lodrät vit rand på hälen"
+                    class="product-image-hover"
+                  />
                 </div>
                 <div class="product-info">
-                  <h3>Product title</h3>
-                  <p class="product-price">1499 kr</p>
+                  <h3>Avenyn</h3>
+                  <p class="product-price">2 495 kr</p>
+                </div>
+              </a>
+            </li>
+
+            <li class="product-card">
+              <a href="#" class="product-link">
+                <div class="product-image">
+                  <img
+                    src="assets/images/products/jacka_fram_web.jpg"
+                    alt="svart huvjacka sedd framifrån, med dragkedja, två sidofickor, ljusgrön SPÅR-logotyp på bröstet och reflexdetaljer detaljer på ärmarna"
+                    class="product-image-main"
+                  />
+                  <img
+                    src="assets/images/products/jacka_bak_web.jpg"
+                    alt="svart huvjacka sedd bakifrån, med SPÅR-logotyp på ryggen och  detaljer på ärmarna och längst ned på ryggen i reflexmaterial"
+                    class="product-image-hover"
+                  />
+                </div>
+                <div class="product-info">
+                  <h3>Älvsborg</h3>
+                  <p class="product-price">4 995 kr</p>
+                </div>
+              </a>
+            </li>
+
+            <li class="product-card">
+              <a href="#" class="product-link">
+                <div class="product-image">
+                  <img
+                    src="assets/images/products/vaska_fram_web.jpg"
+                    alt="mörkgrön axelremsväska sedd framifrån, med svart axelrem, två svarta spännremmar, ljus SPÅR-logotyp och ett litet hänge"
+                    class="product-image-main"
+                  />
+                  <img
+                    src="assets/images/products/vaska_sida_web.jpg"
+                    alt="mörkgrön axelremsväska sedd snett framifrån, med svart axelrem, två svarta spännremmar, ljus SPÅR-logotyp och ett litet hänge"
+                    class="product-image-hover"
+                  />
+                </div>
+                <div class="product-info">
+                  <h3>Haga</h3>
+                  <p class="product-price">2 995 kr</p>
                 </div>
               </a>
             </li>
@@ -127,24 +185,18 @@
                 <div class="product-image">
                   <img
                     src="assets/images/products/glasogon_fram_web.jpg"
-                    alt=""
+                    alt="solglasögonen visas framifrån med fokus på det rosa glaset"
+                    class="product-image-main"
+                  />
+                  <img
+                    src="assets/images/products/glasogon_sida_web.jpg"
+                    alt="sidovy med fokus på den svarta bågen och spårs logga i grönt"
+                    class="product-image-hover"
                   />
                 </div>
                 <div class="product-info">
-                  <h3>Product title</h3>
-                  <p class="product-price">1499 kr</p>
-                </div>
-              </a>
-            </li>
-
-            <li class="product-card">
-              <a href="#" class="product-link">
-                <div class="product-image">
-                  <img src="assets/images/products/keps_sida_web.jpg" alt="" />
-                </div>
-                <div class="product-info">
-                  <h3>Product title</h3>
-                  <p class="product-price">1499 kr</p>
+                  <h3>Vinga</h3>
+                  <p class="product-price">1 495 kr</p>
                 </div>
               </a>
             </li>
@@ -153,25 +205,19 @@
               <a href="#" class="product-link">
                 <div class="product-image">
                   <img
-                    src="assets/images/products/produktbild 1 väska snett framifrån2.jpg"
-                    alt=""
+                    src="assets/images/products/keps_sida_web.jpg"
+                    alt="keps i teal sedd snett framifrån, med ljusgrön SPÅR-logotyp framtill och ventilationshål på sidan"
+                    class="product-image-main"
+                  />
+                  <img
+                    src="assets/images/products/keps_bak_web.jpg"
+                    alt="keps i teal sedd snett bakifrån, med justerbart spänne, en vit reflexdetalj och ventilationshål på sidan"
+                    class="product-image-hover"
                   />
                 </div>
                 <div class="product-info">
-                  <h3>Product title</h3>
-                  <p class="product-price">1499 kr</p>
-                </div>
-              </a>
-            </li>
-
-            <li class="product-card">
-              <a href="#" class="product-link">
-                <div class="product-image">
-                  <img src="assets/images/products/sko.web.jpg" alt="" />
-                </div>
-                <div class="product-info">
-                  <h3>Product title</h3>
-                  <p class="product-price">1499 kr</p>
+                  <h3>Masthugget</h3>
+                  <p class="product-price">595 kr</p>
                 </div>
               </a>
             </li>
@@ -180,25 +226,19 @@
               <a href="#" class="product-link">
                 <div class="product-image">
                   <img
-                    src="assets/images/products/produktbild termosmuggar bild 1.jpg"
-                    alt=""
+                    src="assets/images/products/nyckelring_fram_web.jpeg"
+                    alt="nyckelring med ljusgrön tub handkräm, ett silverfärgat hänge format som en bergskontur och en vit etikett med SPÅR-logotyp"
+                    class="product-image-main"
+                  />
+                  <img
+                    src="assets/images/products/nyckelring_sida_web.jpeg"
+                    alt="nyckelring sedd snett från sidan, med ljusgrön tub handkräm, silverfärgat hänge format som en bergskontur och vit etikett med SPÅR-logotyp"
+                    class="product-image-hover"
                   />
                 </div>
                 <div class="product-info">
-                  <h3>Product title</h3>
-                  <p class="product-price">1499 kr</p>
-                </div>
-              </a>
-            </li>
-
-            <li class="product-card">
-              <a href="#" class="product-link">
-                <div class="product-image">
-                  <img src="assets/images/products/nyckelring.web.jpg" alt="" />
-                </div>
-                <div class="product-info">
-                  <h3>Product title</h3>
-                  <p class="product-price">1499 kr</p>
+                  <h3>Slottsskogen</h3>
+                  <p class="product-price">295 kr</p>
                 </div>
               </a>
             </li>
@@ -207,13 +247,35 @@
               <a href="#" class="product-link">
                 <div class="product-image">
                   <img
-                    src="assets/images/products/produktbild läppbalsam bild 1.jpg"
-                    alt=""
+                    src="assets/images/products/termosmugg_fram_web.jpg"
+                    alt="termosmugg i teal med lock och ett ljust konturmotiv av ett löpspår på framsidan"
+                    class="product-image-main"
                   />
                 </div>
                 <div class="product-info">
-                  <h3>Product title</h3>
-                  <p class="product-price">1499 kr</p>
+                  <h3>Feskekôrka</h3>
+                  <p class="product-price">349 kr</p>
+                </div>
+              </a>
+            </li>
+
+            <li class="product-card">
+              <a href="#" class="product-link">
+                <div class="product-image">
+                  <img
+                    src="assets/images/products/lappbalsam_bak_web.jpg"
+                    alt="läppbalsam i ljusgrön hylsa med stiftet uppskruvat och det avtagna locket lutat mot sidan"
+                    class="product-image-main"
+                  />
+                  <img
+                    src="assets/images/products/lappbalsam_fram_web.jpg"
+                    alt="läppbalsam i ljusgrön cylindrisk hylsa, stående upprätt"
+                    class="product-image-hover"
+                  />
+                </div>
+                <div class="product-info">
+                  <h3>Brännö</h3>
+                  <p class="product-price">195 kr</p>
                 </div>
               </a>
             </li>
@@ -242,7 +304,8 @@
       <!-- EVENT SECTION -->
       <section class="event-section" id="event">
         <div class="event-content">
-          <p class="eyebrow">Säkra din plats</p>
+          <p class="eyebrow">26 september 2026 @ Södra Larmgatan 14</p>
+          <p class="eyebrow">Från kl. 09.30-13.30</p>
           <h2>SPÅR x Attenborough</h2>
 
           <p class="event-description">
@@ -251,7 +314,7 @@
           </p>
 
           <form action="" class="event-form">
-            <label for="event-email" class="visually-hidden"> E-post </label>
+            <label for="event-email">Anmäl dig till eventet</label>
 
             <div class="form-field">
               <input
@@ -282,7 +345,11 @@
             <li class="category-card">
               <a href="#">
                 <div class="category-image">
-                  <h3>Kategori</h3>
+                  <h3>Skor</h3>
+                  <img
+                    src="assets/images/campaigns/skor_kategori.jpg"
+                    alt="reflexdetaljer på skorna avenyn lyser upp på en slaskig gata"
+                  />
                 </div>
               </a>
             </li>
@@ -290,7 +357,11 @@
             <li class="category-card">
               <a href="#">
                 <div class="category-image">
-                  <h3>Kategori</h3>
+                  <h3>Ytterkläder</h3>
+                  <img
+                    src="assets/images/campaigns/ytterklader_kategori.jpg"
+                    alt="okus på jackan älvsborg som visas av en kvinna som står i vind och regn"
+                  />
                 </div>
               </a>
             </li>
@@ -298,7 +369,11 @@
             <li class="category-card">
               <a href="#">
                 <div class="category-image">
-                  <h3>Kategori</h3>
+                  <h3>Accessoarer</h3>
+                  <img
+                    src="assets/images/campaigns/accessoarer_kategori.jpg"
+                    alt="kepsen masthugget visas upp i en regnig och mörk stadsmiljö"
+                  />
                 </div>
               </a>
             </li>
@@ -326,13 +401,17 @@
 
       <!-- CONTENT SECTION -->
       <section class="content-section">
-        <div class="section-inner">
+        <div class="video-content">
           <h2>Jackans spår</h2>
+          <p>
+            Genomtänkta material, smarta lager och funktion i varje detalj.
+            Utvecklad för att möta naturens utmaningar, med omtanke om avtrycket
+            vi lämnar efter oss.
+          </p>
         </div>
+
         <div class="content-image">
-          <video autoplay muted loop playsinline aria-hidden="true" poster="/">
-            <source src="assets/videos/teknisk_desktop.mp4" type="video/mp4" />
-          </video>
+          <video autoplay muted loop playsinline aria-hidden="true"></video>
 
           <button class="video-toggle" type="button" aria-label="Pausa video">
             <span class="video-toggle-icon" aria-hidden="true">Ⅱ</span>
@@ -348,19 +427,19 @@
               <article>
                 <div class="content-card-image">
                   <img
-                    src="assets/images/campaigns/baaae0bcfec76819a386c32e745e96d98614ff01.jpg"
-                    alt=""
+                    src="assets/images/campaigns/yttre_skyddslager.jpg"
+                    alt="närbild på det membranet som utgör yttre skicket av jackan"
                   />
                 </div>
 
                 <div class="content-card-info">
-                  <h3>Rubrik</h3>
+                  <h3>Skyddande membran</h3>
                   <p>
-                    Borem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Etiam eu turpis molestie, dictum est a, mattis tellus. Sed
-                    dignissim, metus nec fringilla accumsan, risus sem
-                    sollicitudin lacus, ut interdum tellus elit sed risus.
-                    Maecenas eget condimentum velit, sit amet feugiat lectus.
+                    Ett tunt membran som håller regn ute samtidigt som fukt kan
+                    transporteras bort från kroppen. Den tunna konstruktionen
+                    bidrar till en lättare jacka med mindre materialåtgång. Fri
+                    från PFAS, så skyddet fungerar utan att lämna kvar
+                    kemekalier i naturen.
                   </p>
                 </div>
               </article>
@@ -370,19 +449,19 @@
               <article>
                 <div class="content-card-image">
                   <img
-                    src="assets/images/campaigns/b08bf978a73bb10842fb9be65a585a34f3d524c3.png"
-                    alt=""
+                    src="assets/images/campaigns/ventilerande_innerfoder.jpg"
+                    alt="närbild på meshtyget som visar ventilerande egenskaper"
                   />
                 </div>
 
                 <div class="content-card-info">
-                  <h3>Rubrik</h3>
+                  <h3>Ventilerande mesh</h3>
                   <p>
-                    Borem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Etiam eu turpis molestie, dictum est a, mattis tellus. Sed
-                    dignissim, metus nec fringilla accumsan, risus sem
-                    sollicitudin lacus, ut interdum tellus elit sed risus.
-                    Maecenas eget condimentum velit, sit amet feugiat lectus.
+                    Under armarna och över ryggen sitter zoner av luftigt mesh
+                    där kroppen blir som varmast. Värmen och fukten släpps ut
+                    medan du rör dig, så att du håller en jämn temperatur och
+                    slipper frysa när du stannar. Meshen är mjuk mot huden och
+                    snabbtorkande.
                   </p>
                 </div>
               </article>
@@ -392,19 +471,18 @@
               <article>
                 <div class="content-card-image">
                   <img
-                    src="assets/images/campaigns/080cff3750e4b8ba0349909e84faf3614f39c28a.png"
-                    alt=""
+                    src="assets/images/campaigns/forstarkningsvav.jpg"
+                    alt="starkt inzoomat på tyget som visar tät väv av återvunnet fiber"
                   />
                 </div>
 
                 <div class="content-card-info">
-                  <h3>Rubrik</h3>
+                  <h3>Återvunnen nylon</h3>
                   <p>
-                    Borem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Etiam eu turpis molestie, dictum est a, mattis tellus. Sed
-                    dignissim, metus nec fringilla accumsan, risus sem
-                    sollicitudin lacus, ut interdum tellus elit sed risus.
-                    Maecenas eget condimentum velit, sit amet feugiat lectus.
+                    Tillverkat av återvunnen nylon som ger ett slitstarkt och
+                    vattenavvisande skydd mot regn och vind. Genom att använda
+                    återvunnet material tas befintliga resurser tillvara
+                    samtidigt som behovet av ny råvara kan minska.
                   </p>
                 </div>
               </article>
@@ -452,8 +530,8 @@
 
         <div class="split-image">
           <img
-            src="assets/images/campaigns/9a6f9a828c0cffba5b5795bdc46ac0ee8767dcf1.png"
-            alt=""
+            src="assets/images/campaigns/skog_hallbarhet.jpg"
+            alt="Grön tallskog med en gran i förgrunden och en bred brun stig i mitten."
           />
         </div>
       </section>
@@ -469,17 +547,74 @@
             <li class="gallery-card">
               <article>
                 <a
-                  href="/"
-                  aria-label="Visa inlägg från @username på Instagram"
+                  href="#"
+                  aria-label="Visa inlägg från @asfaltsloparen på Instagram"
+                >
+                  <div class="gallery-image">
+                    <img
+                      src="assets/images/campaigns/nyckelring_community.jpeg "
+                      alt="person i svarta löparkläder som springer längs vattnet i skymningen, med en nyckelring med ljusgrön handkrämstub fäst vid höften"
+                    />
+                  </div>
+                  <div class="gallery-card-title">
+                    <p>@asfaltsloparen</p>
+                    <img src="assets/icons/arrow_outward.svg" alt="" />
+                  </div>
+                </a>
+              </article>
+            </li>
+
+            <li class="gallery-card">
+              <article>
+                <a href="#" aria-label="Visa inlägg från @clara_k på Instagram">
+                  <div class="gallery-image">
+                    <img
+                      src="assets/images/campaigns/glasogon_community.jpg"
+                      alt="person sedd i profil som visar upp solglasögonen vinga"
+                    />
+                  </div>
+                  <div class="gallery-card-title">
+                    <p>@clara_k</p>
+                    <img src="assets/icons/arrow_outward.svg" alt="" />
+                  </div>
+                </a>
+              </article>
+            </li>
+
+            <li class="gallery-card">
+              <article>
+                <a
+                  href="#"
+                  aria-label="Visa inlägg från @linus.westerbacka på Instagram"
+                >
+                  <div class="gallery-image">
+                    <img
+                      src="assets/images/campaigns/sko_community.jpeg"
+                      alt="närbild av gröna skor med svarta sulor och vit SPÅR-logotyp under löpning på en våt, stenig skogsstig, med vatten som stänker kring fötterna"
+                    />
+                  </div>
+                  <div class="gallery-card-title">
+                    <p>@linus.westerbacka</p>
+                    <img src="assets/icons/arrow_outward.svg" alt="" />
+                  </div>
+                </a>
+              </article>
+            </li>
+
+            <li class="gallery-card">
+              <article>
+                <a
+                  href="#"
+                  aria-label="Visa inlägg från @tvattstugeterapit på Instagram"
                 >
                   <div class="gallery-image">
                     <img
                       src="assets/images/campaigns/keps_community.jpeg"
-                      alt=""
+                      alt="person sedd snett uppifrån som tittar ner och visar upp kepsen masthugget där spårs logga är i fokus"
                     />
                   </div>
                   <div class="gallery-card-title">
-                    <p>@username</p>
+                    <p>@tvattstugeterapit</p>
                     <img src="assets/icons/arrow_outward.svg" alt="" />
                   </div>
                 </a>
@@ -489,17 +624,17 @@
             <li class="gallery-card">
               <article>
                 <a
-                  href="/"
-                  aria-label="Visa inlägg från @username på Instagram"
+                  href="#"
+                  aria-label="Visa inlägg från @junilarsson på Instagram"
                 >
                   <div class="gallery-image">
                     <img
                       src="assets/images/campaigns/jacka_community.jpg"
-                      alt=""
+                      alt="person sedd framifrån som visar upp jackan älvsborg"
                     />
                   </div>
                   <div class="gallery-card-title">
-                    <p>@username</p>
+                    <p>@junilarsson</p>
                     <img src="assets/icons/arrow_outward.svg" alt="" />
                   </div>
                 </a>
@@ -509,17 +644,17 @@
             <li class="gallery-card">
               <article>
                 <a
-                  href="/"
-                  aria-label="Visa inlägg från @username på Instagram"
+                  href="#"
+                  aria-label="Visa inlägg från @alma.andersson på Instagram"
                 >
                   <div class="gallery-image">
                     <img
-                      src="assets/images/campaigns/glasögon_community.jpg"
-                      alt=""
+                      src="assets/images/campaigns/termos_inomhus_community.jpg"
+                      alt="person i mörk kappa och rutig halsduk som håller en mörkgrön termosmugg vid en spårvagnshållplats i skymningen"
                     />
                   </div>
                   <div class="gallery-card-title">
-                    <p>@username</p>
+                    <p>@alma.andersson</p>
                     <img src="assets/icons/arrow_outward.svg" alt="" />
                   </div>
                 </a>
@@ -529,17 +664,17 @@
             <li class="gallery-card">
               <article>
                 <a
-                  href="/"
-                  aria-label="Visa inlägg från @username på Instagram"
+                  href="#"
+                  aria-label="Visa inlägg från @jonastravelling på Instagram"
                 >
                   <div class="gallery-image">
                     <img
-                      src="assets/images/campaigns/Rectangle 19.png"
-                      alt=""
+                      src="assets/images/campaigns/handkram_community.jpeg"
+                      alt="person som springer på en våt parkväg i skymningen, klädd i svart jacka med lysande reflexdetaljer på ärmarna"
                     />
                   </div>
                   <div class="gallery-card-title">
-                    <p>@username</p>
+                    <p>@jonastravelling</p>
                     <img src="assets/icons/arrow_outward.svg" alt="" />
                   </div>
                 </a>
@@ -549,57 +684,17 @@
             <li class="gallery-card">
               <article>
                 <a
-                  href="/"
-                  aria-label="Visa inlägg från @username på Instagram"
+                  href="#"
+                  aria-label="Visa inlägg från @oakfield på Instagram"
                 >
                   <div class="gallery-image">
                     <img
-                      src="assets/images/campaigns/Rectangle 19-3.png"
-                      alt=""
+                      src="assets/images/campaigns/termos_utomhus_community.jpg"
+                      alt="person i mörk kappa och rutig halsduk som håller en mörkgrön termosmugg vid en spårvagnshållplats i skymningen"
                     />
                   </div>
                   <div class="gallery-card-title">
-                    <p>@username</p>
-                    <img src="assets/icons/arrow_outward.svg" alt="" />
-                  </div>
-                </a>
-              </article>
-            </li>
-
-            <li class="gallery-card">
-              <article>
-                <a
-                  href="/"
-                  aria-label="Visa inlägg från @username på Instagram"
-                >
-                  <div class="gallery-image">
-                    <img
-                      src="assets/images/campaigns/Rectangle 19-2.png"
-                      alt=""
-                    />
-                  </div>
-                  <div class="gallery-card-title">
-                    <p>@username</p>
-                    <img src="assets/icons/arrow_outward.svg" alt="" />
-                  </div>
-                </a>
-              </article>
-            </li>
-
-            <li class="gallery-card">
-              <article>
-                <a
-                  href="/"
-                  aria-label="Visa inlägg från @username på Instagram"
-                >
-                  <div class="gallery-image">
-                    <img
-                      src="assets/images/campaigns/Rectangle 19-1.png"
-                      alt=""
-                    />
-                  </div>
-                  <div class="gallery-card-title">
-                    <p>@username</p>
+                    <p>@oakfield</p>
                     <img src="assets/icons/arrow_outward.svg" alt="" />
                   </div>
                 </a>
@@ -608,22 +703,16 @@
           </ul>
 
           <div class="carousel-controls">
-            <button
-              type="button"
-              aria-label="Föregående inlägg"
-              data-direction="-1"
-            >
+            <button type="button" aria-label="Föregående" data-direction="-1">
               <img src="assets/icons/chevron_backward.svg" alt="" />
             </button>
 
-            <button type="button" aria-label="Nästa inlägg" data-direction="1">
+            <button type="button" aria-label="Nästa" data-direction="1">
               <img src="assets/icons/keyboard_arrow_right.svg" alt="" />
             </button>
           </div>
         </div>
       </section>
-
-      <!-- NEWSLETTER SECTION -->
 
       <!-- NEWSLETTER SECTION -->
       <section class="newsletter-section">
@@ -638,9 +727,9 @@
           <div class="newsletter-form-wrapper">
             <form class="newsletter-form">
               <div class="form-field">
-                <label for="newsletter-email" class="visually-hidden">
-                  E-post
-                </label>
+                <label for="newsletter-email"
+                  >Anmäl dig till vårt community</label
+                >
 
                 <input
                   type="email"
@@ -669,7 +758,7 @@
 
     <!-- FOOTER -->
     <footer class="site-footer">
-      <a href="/" class="footer-logo"
+      <a href="#" class="footer-logo"
         ><img src="assets/logos/Logo_footer.png" alt=""
       /></a>
 
