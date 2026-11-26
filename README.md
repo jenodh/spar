@@ -16,7 +16,8 @@ Figma design file – shared privately with project collaborators.
 
 ### Project management
 
-GitHub Project Board [Se projektplanen](https://github.com/users/jenodh/projects/2/)
+GitHub Project Board
+[View project board](https://github.com/users/jenodh/projects/2/)
 
 ## Technologies
 
